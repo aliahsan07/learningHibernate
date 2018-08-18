@@ -1,0 +1,264 @@
+1
+00:00:02,290 --> 00:00:07,270
+Come back in this step let's write a unit test for the delete by the method.
+
+2
+00:00:07,300 --> 00:00:12,420
+What are the things which we did earlier is to call the pause read or delete by ID in the Application
+
+3
+00:00:12,540 --> 00:00:13,500
+class.
+
+4
+00:00:13,500 --> 00:00:19,220
+Actually it's not good to keep more defend it in here so I'll delete this from here so I'm deleting
+
+5
+00:00:19,230 --> 00:00:21,180
+the delete method in here.
+
+6
+00:00:21,180 --> 00:00:25,660
+So the data would be as it is which is present in the data or sequel.
+
+7
+00:00:25,890 --> 00:00:29,770
+All the doors would be present when we execute the unit test.
+
+8
+00:00:29,910 --> 00:00:33,990
+So now I would go and write dimeter for delete.
+
+9
+00:00:34,080 --> 00:00:41,970
+So I'm copying the method for find bady what I would want to do is delete the basic so delete by ID.
+
+10
+00:00:42,120 --> 00:00:43,530
+I would want to delete.
+
+11
+00:00:43,630 --> 00:00:44,470
+Bye.
+
+12
+00:00:44,550 --> 00:00:47,460
+So let's do that delete by 80.
+
+13
+00:00:47,490 --> 00:00:53,520
+Once you delete the row of 10000 one bullet youth 10000.
+
+14
+00:00:53,660 --> 00:00:58,100
+So if I am deleting 10000 do what should be the consequence.
+
+15
+00:00:58,100 --> 00:00:59,540
+How can I test it.
+
+16
+00:00:59,540 --> 00:01:00,740
+What would this do.
+
+17
+00:01:00,740 --> 00:01:07,340
+This would delete the row from the database so this is this will delete the code with an ID ten 10000
+
+18
+00:01:07,340 --> 00:01:08,850
+two from the database.
+
+19
+00:01:09,020 --> 00:01:12,080
+How can I check whether it's a work or not.
+
+20
+00:01:12,080 --> 00:01:19,490
+How can I write the unit for that I can check it by trying to retrieve data value back and seeing that
+
+21
+00:01:19,490 --> 00:01:20,550
+it isn't.
+
+22
+00:01:20,630 --> 00:01:25,800
+I'll take the first read or find by the OneTel ten doesn't doesn't.
+
+23
+00:01:25,880 --> 00:01:27,380
+I would check that it's not.
+
+24
+00:01:27,420 --> 00:01:31,100
+So I would want to check that this is not how they do that.
+
+25
+00:01:31,150 --> 00:01:38,130
+Said not generate as a signal method which would be helpful in checking whether something is not.
+
+26
+00:01:38,250 --> 00:01:43,670
+So if you have an error on the third then just do control one or command one and do a static import
+
+27
+00:01:43,770 --> 00:01:45,020
+of it.
+
+28
+00:01:45,120 --> 00:01:47,270
+So what we're doing in here is very simple.
+
+29
+00:01:47,330 --> 00:01:53,630
+We started with deleting delete which was done in here so it didn't matter it was deleting the.
+
+30
+00:01:53,640 --> 00:01:55,650
+So I removed the delete from there.
+
+31
+00:01:55,770 --> 00:02:01,580
+I don't want to actually write a unit test for it right now so I going to lead by the basic method we
+
+32
+00:02:01,670 --> 00:02:06,310
+call delete and check that that particular thing does not exist.
+
+33
+00:02:06,350 --> 00:02:07,490
+So let's run this.
+
+34
+00:02:07,490 --> 00:02:13,210
+Right click and as gene test you can see that the unit test has succeeded.
+
+35
+00:02:13,270 --> 00:02:14,310
+That's cool.
+
+36
+00:02:14,630 --> 00:02:22,610
+And now when I go to the log I can see that the delete queries file to the delete query is fired with
+
+37
+00:02:23,090 --> 00:02:29,090
+the idea that it doesn't do and then the Select queries fired the query does not come back with any
+
+38
+00:02:29,090 --> 00:02:30,830
+details as such.
+
+39
+00:02:31,070 --> 00:02:33,160
+So it does not come back with any details.
+
+40
+00:02:33,440 --> 00:02:34,710
+So what happens.
+
+41
+00:02:34,730 --> 00:02:42,380
+It would come back arsenal and the unit test would exceed one of the important things about this particular
+
+42
+00:02:42,380 --> 00:02:43,460
+unit test.
+
+43
+00:02:43,510 --> 00:02:49,650
+Is this unit test changing the date which is present when we write unit tests.
+
+44
+00:02:49,760 --> 00:02:56,330
+You would want to leave the state of the application as it was before running that you would need first.
+
+45
+00:02:56,440 --> 00:03:02,460
+So because this is modifying the state of the system state of the data that we are having.
+
+46
+00:03:02,540 --> 00:03:08,800
+What I would need to do is would need to put an end iteration called Doherty's context.
+
+47
+00:03:08,960 --> 00:03:12,400
+So I just need to say Dodi's context and import it in.
+
+48
+00:03:12,800 --> 00:03:21,410
+What would happen is after this test is one spring would automatically set the date up after the test
+
+49
+00:03:21,410 --> 00:03:22,010
+is run.
+
+50
+00:03:22,010 --> 00:03:29,120
+Spring would reset the data so that for the other deaths the data has not changed at all.
+
+51
+00:03:29,120 --> 00:03:30,510
+Think about this scenario.
+
+52
+00:03:30,770 --> 00:03:34,470
+Let's say I am getting the value of ten thousand two in here.
+
+53
+00:03:34,550 --> 00:03:39,290
+Let's say the name here we are checking for is the name put 10 dollars into.
+
+54
+00:03:39,590 --> 00:03:46,520
+If this test deletes that data and this test is dependent on that date to be available this test would
+
+55
+00:03:46,520 --> 00:03:47,070
+fail.
+
+56
+00:03:47,180 --> 00:03:52,540
+Even though there is no problem with the code what is happening is this this is deleting that data.
+
+57
+00:03:52,580 --> 00:03:54,790
+This test is not able to find it.
+
+58
+00:03:54,800 --> 00:03:57,990
+That's not a good situation to be in with your unit.
+
+59
+00:03:58,000 --> 00:04:01,930
+This is the reason why we need to put an end to these contacts.
+
+60
+00:04:02,030 --> 00:04:04,760
+What you said would exude this test.
+
+61
+00:04:04,760 --> 00:04:06,320
+It would make sure that everything is fine.
+
+62
+00:04:06,470 --> 00:04:13,250
+OK delete is working fine and it would reset the data to whatever it was before this test and that would
+
+63
+00:04:13,250 --> 00:04:19,910
+ensure that this system is in a consistent state for the this as well.
+
+64
+00:04:19,910 --> 00:04:26,720
+In this step what we did is we order simple unit test to be able to delete 10 doesn't do and we check
+
+65
+00:04:26,720 --> 00:04:31,320
+that after deleting the didn't doesn't do does not exist until the next step.
+
+66
+00:04:31,320 --> 00:04:31,530
+Boy.
+

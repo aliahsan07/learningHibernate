@@ -1,0 +1,52 @@
+1
+00:00:03,960 --> 00:00:11,740
+Welcome to the section JPA with hibernate in debt this is the main section of this course.
+
+2
+00:00:11,880 --> 00:00:19,710
+All the sections and dealing of our setting you up to be able to make the best use of this section in
+
+3
+00:00:19,710 --> 00:00:26,270
+the section you'd learn the basics of entities and the different annotations.
+
+4
+00:00:26,640 --> 00:00:34,380
+You learn how to create relationships between entities and also how to define inheritance hide read
+
+5
+00:00:34,480 --> 00:00:43,680
+keys people learn management and persistence context in that we will also discuss about the various
+
+6
+00:00:43,680 --> 00:00:52,220
+ways of creating data from the database using J.P. J.P. Cuil they do queries and criteria API.
+
+7
+00:00:52,450 --> 00:01:00,860
+We will understand transaction management and also how to do performance tuning for you AJP application.
+
+8
+00:01:00,870 --> 00:01:05,950
+We will also discuss how we implement caching with Fossilman.
+
+9
+00:01:06,180 --> 00:01:12,930
+And the second Lebel caches the home folder for this specific section is 0 2.
+
+10
+00:01:13,020 --> 00:01:21,600
+JP It wants it once you get into this section you'd see the details of all the eighty five steps and
+
+11
+00:01:21,600 --> 00:01:26,260
+the complete code example at the end of the section.
+
+12
+00:01:26,400 --> 00:01:32,130
+Also present we did backups at different stages of this specific section.
+
+13
+00:01:32,130 --> 00:01:40,200
+I welcome you to the most important section on this cause and I will see you in the full step.
+
