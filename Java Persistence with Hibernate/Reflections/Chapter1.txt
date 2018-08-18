@@ -1,0 +1,52 @@
+Understanding Object/Relational Persistence
+
+Hibernate is an open source ORM service implementation.
+It mediates the application’s interaction with a relational database, leaving the developer free to concentrate on the business problem at hand.
+Book also covers Java Persistence, a new standard for persistence that is part of EJB 3.0 specification. 
+Hibernate implements Java Persistence and supports all the standardized mappings, queries, and APIs.
+
+SQL as a data definition language(DDL) and data manipulation language(DML).
+Because the data access tasks are often so tedious, we have to ask: Are the relational 
+data model and (especially) SQL the right choices for persistence in objectoriented applications? Yes
+paradigm mismatch -> object-oriented programming and SQL
+
+Persistence would mean:
+1) Storage, organization, and retrieval of structured data
+2) Concurrency and data integrity
+3) Data sharing
+
+Granularity refers to the relative size of the types I'm working with.
+
+Use surrogate keys whenever you can't find a good natural key.
+A surrogate key column is a primary key column with no meaning to the user; in other words, a key that isn’t presented to the user and is only used for identification of data inside the software system
+
+The single most important thing you can do to improve the performance of data access code is to minimize the number of requests to the database.
+The most obvious way to do this is to minimize the number of SQL queries.
+
+Hibernate - n+1 select problem
+
+Object/relational mapping 
+What is ORM?
+object/relational mapping is the automated (and transparent) persistence of objects in a Java application to the tables in a relational database, 
+using metadata that describes the mapping between the objects and the database.
+ORM solution consists of the following four pieces:
+1) An API for performing basic CRUD operations on objects of persistent classes
+2) A language or API for specifying queries that refer to classes and properties of classes
+3) A facility for specifying mapping metadata
+4) A technique for the ORM implementation to interact with transactional objects to perform dirty checking, lazy association fetching, and other optimization functions
+
+Hibernate is a full object/relational mapping tool
+The new EJB 3.0 specification comes in several parts
+The second part of the specification deals with persistence exclusively: entities, object/relational mapping metadata, persistence 
+manager interfaces, and the query language. This second part is called Java Persistence API (JPA), probably because its interfaces are in the package javax.persistence
+
+Hibernate implements Java Persistence, and because a JPA engine must be pluggable, new and interesting combinations of software are possible.
+You can select from various Hibernate software modules and combine them depending on your project’s technical and business requirements.
+
+Hibernate Core
+It’s the base service for persistence, with its native API and its mapping metadata stored in XML files
+It has a query language called HQL (almost the same as SQL), as well as programmatic query interfaces for Criteria and Example queries
+Hibernate Annotations
+Hibernate EntityManager
+Hibernate EntityManager is a small wrapper around Hibernate Core that provides
+JPA compatibility.)

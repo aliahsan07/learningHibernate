@@ -1,0 +1,171 @@
+Development Scenarios
+
+1. Top Down
+Start with existing domain model, its implementation in Java, and ideally complete freedom wrt to DB.
+You must create mapping metadata either with XML files or by annotating Java source, and then optionally let Hibernate’s hbm2ddl tool generate the database schema.
+
+2. Bottom Up
+It begins with exisiting database schema and data model. Easiest way is to use reverse-engineering tools to extract metadata from DB. 
+This metadata can be used to generate XML mapping files, with hbm2hbmxml for example. 
+With hbm2java, Hibernate mapping metadata is used to generate Java persistent classes, and even data access objects (a skeleton for Java Persistence layer)
+Or instead of writing to XML mapping files, annotated Java Source Code (EJB 3.0 entity classes) can be produced.
+
+3. Middle out
+Using Hibernate XML mapping metadata. 
+Begin with handwritten XML mapping files, and then generate the DB schema using hbm2ddl and Java classses using hbm2java.
+
+4. Meet in the Middle
+Combining existing Java classes and existing DB schema. Mapping metadata need to be written by hand. This can be an incredibly painful scenario.
+
+
+The no-argument constructor is a requirement (tools like Hibernate use reflection on this constructor to instantiate objects).
+Persistent class can be used in any execution context at all- no special container is needed. 
+This is benefit of new JPA entities,which are also plain Java objects.
+
+Hibernate Session
+It’s a single-threaded nonshared object that represents a particular unit of work with the database.
+It has the persistence manager API you call to load and store objects.
+The Session internals consist of a queue of SQL statements that need to be synchronized with the database at some point and 
+a map of managed persistence instances that are monitored by the Session.)
+
+Transaction
+This Hibernate API can be used to set transaction boundaries
+programmatically, but it’s optional (transaction boundaries aren’t)
+
+Query
+A database query can be written in Hibernate’s own object-oriented query language (HQL) or plain SQL.
+When list() is called HQL is translated into SQL.
+
+Hibernate does automatic dirty checking. This feature saves you the effort of explicitly asking
+Hibernate to update the database when you modify the state of an object inside a unit of work
+
+Cascading save
+Similarly, the new message was made persistent when a reference was created from the first message.
+It saves you the effort of explicitly making the new object persistent by calling
+save(), as long as it’s reachable by an already persistent instance.
+
+transactional write-behind
+Also notice that the ordering of the SQL statements isn’t the same as the order
+in which you set property values. Hibernate uses a sophisticated algorithm to
+determine an efficient ordering that avoids database foreign key constraint violations
+but is still sufficiently predictable to the user. This feature is called transactional write-behind.
+
+Hibernate Configuration
+The regular way of initializing Hibernate is to build a SessionFactory object from a Configuration object
+If you like, you can think of the Configuration as an object representation of a configuration file (or a properties file) for Hibernate.
+
+How is SessionFactory created?
+SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+how did Hibernate know where the configuration file was located?
+When new Configuration() is called, Hibernate searches for a file named
+hibernate.properties in the root of the classpath. If it’s found, all hibernate.* properties are loaded and added to the Configuration object.
+When configure() is called, Hibernate searches for a file named hibernate.cfg.xml in the root of the classpath
+The location of the hibernate.properties configuration file is always the
+root of the classpath, outside of any package. Unless ofc you pass it to configure() method.
+
+The Configuration object needs to know about all your XML mapping files before you build the SessionFactory.
+A SessionFactory is an object that represents a particular Hibernate configuration for a particular set of mapping metadata.
+You can either list all your XML mapping files in the Hibernate XML configuration file, or you
+can set their names and paths programmatically on the Configuration object
+
+The database connection pool
+Generally, it isn’t advisable to create a connection each time you want to interact with the database. 
+Instead, Java applications should use a pool of connections. Each application thread that needs to do work on the database requests a connection
+from the pool and then returns it to the pool when all SQL operations have been executed. 
+The pool maintains the connections and minimizes the cost of opening and closing connections.
+There are three reasons for using a pool:
+1) Acquiring a new connection is expensive
+2) Maintaining many idle connections is expensive for DBMS. 
+3) Creating prepared statements is also expensive for some drivers, and the connection pool can cache statements for a connection across requests.
+
+With no application server to provide a connection pool, an application either
+implements its own pooling algorithm or relies on a third-party library such as the
+open source C3P0 connection pooling software
+Without Hibernate, the application
+code calls the connection pool to obtain a JDBC connection and then executes
+SQL statements with the JDBC programming interface. When the
+application closes the SQL statements and finally closes the connection, the prepared
+statements and connection aren’t destroyed, but are returned to the pool.
+
+With Hibernate the picture changes. It acts as a client of the JDBC connection pool. 
+The application code uses the Hibernate Session
+and Query API for persistence operations, and it manages database transactions (probably) with the Hibernate Transaction API
+
+idle_test_period: In order to avoid this you can let the pool periodically check a connection (Think of a ping) for it's validity.
+
+Handling the sessionFactory
+SessionFactory should be instantiated once during application initialization. Any Session should be created using this single SessionFactory.
+SessionFactory is thread-safe and can be shared, Session is a single-threaded object.
+Using static global variable and static initialization to store SessionFactory.
+Both the variable and initialization can be handled be implemented in a single class, HibernateUtil. 
+
+
+Ant is a powerful build system for Java. 
+Typically, you’d write a build.xml file for your project and call the build targets you defined in this file with the Ant command-line tool
+
+HSQLDB
+a lightweight, no-frills database system that is easy to install and configure
+
+
+javax.persistence interfaces
+Inside this package are standardized JPA annotations you need to map @Entity class to a database @Table.
+JPA persistence provider detects that the @Id annotation is on a field and assumes that it should access properties on an object directly
+through fields at runtime.
+If you placed the @Id annotation on the getId() method, you’d enable access to properties through getter and setter methods by default.
+
+All properties of an entity are automatically considered persistent, with default strategies and table/column names.
+
+Using Hibernate EntityManager
+Its a wrapper around HibernateCore that provides JPA programming interfaces, supports JPA entity instance lifecycle, and allows you to
+write queries with the standardized Java Persistence query language.
+One advantage of using this : You no longer have to list all annotated classes (or XML mapping files) in your configuration file.
+
+A SessionFactory represents a particular logical data-store configuration in a Hibernate application. 
+The EntityManagerFactory has the same role in a JPA application
+The configuration of an EMF, together with a set of mapping metadata, (usually annotated classes), is called the persistence unit.
+
+
+Hibernate uses JDBC in the background to connect with the DB. 
+SessionFactory allows us to get session objects to connect to the db.
+
+Entity class
+Java class that is mapped to a database table
+Two options for mapping a class
+1) XML config file (legacy approach)
+2) Java annotations (preferred)
+
+Hibernate implements standard interface of javax.persistence
+
+Two key players for Hibernate:
+1) SessionFactory: Reads the hibernate config file, creates session objects, only created once
+2) Session: Wrapper around JDBC connection to the DB, main object used to save/retrieve objects, retrieved from SessionFactory.
+ 
+GenerationType.Identity lets you assign primary keys using db identity column. Basically lets you use auto increment from db.
+
+session.get(Student.class, ID) to read an entry from a table
+
+hbm2ddl 
+<property name="hbm2ddl.auto">create</property>
+Drop and re-create the database schema on startup
+The hbm2ddl.auto property enables automatic generation of database schemas directly into the database.
+
+<mapping resource="org/hibernate/tutorial/hbm/Event.hbm.xml"/>
+The resource attribute of the <mapping/> element causes Hibernate to attempt 
+to locate that mapping as a classpath resource using a java.lang.ClassLoader lookup.
+
+JavaBean naming conventions
+The no-argument constructor, which is also a JavaBean convention, is a requirement for all persistent classes. 
+Hibernate needs to create objects for you, using Java Reflection
+What is Java reflection? 
+
+The mapping file?
+src/.hbm.xml
+Hibernate uses the mapping metadata to determine how to load and store objects of the persistent class.
+
+Hibernate uses the property named by the <id/> element to uniquely identify rows in the table.
+In the absence of a column attribute, Hibernate uses the property name as the column name. 
+
+The types declared and used in the mapping files are neither Java data types nor SQL database types. Instead, they are Hibernate mapping types, 
+which are converters which translate between Java and SQL data types. 
+Hibernate attempts to determine the correct conversion and mapping type autonomously if the type attribute is not specified in the mapping, 
+by using Java reflection to determine the Java type of the declared property and using a default mapping type for that Java type.
