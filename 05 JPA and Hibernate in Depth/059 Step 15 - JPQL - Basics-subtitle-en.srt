@@ -1,0 +1,412 @@
+1
+00:00:02,030 --> 00:00:02,870
+Welcome back.
+
+2
+00:00:03,020 --> 00:00:07,940
+We're all used to writing as well Kuwaiti's try to convey tolex data from God.
+
+3
+00:00:07,940 --> 00:00:09,990
+This is a school Kriti.
+
+4
+00:00:10,160 --> 00:00:12,110
+I can't wait to start from code.
+
+5
+00:00:12,330 --> 00:00:23,970
+We're letting name like birth and the age 100 steps so I can do things like this this run the query
+
+6
+00:00:24,090 --> 00:00:30,360
+and it would run and meet things which match that specific thing so it if you look at the query it select
+
+7
+00:00:30,370 --> 00:00:35,150
+start from code with name like percentage hundred steps within single quotes.
+
+8
+00:00:35,150 --> 00:00:38,510
+So this is a normal school query which we.
+
+9
+00:00:38,510 --> 00:00:38,750
+Right.
+
+10
+00:00:38,750 --> 00:00:39,020
+Right.
+
+11
+00:00:39,030 --> 00:00:40,420
+This is the start from court.
+
+12
+00:00:40,600 --> 00:00:47,190
+And here we are defining a very condition bad name like you're defending a condition or I can say where
+
+13
+00:00:47,480 --> 00:00:49,360
+either is equal to one.
+
+14
+00:00:49,510 --> 00:00:54,380
+This is only the first rule because it matches the idea one.
+
+15
+00:00:54,550 --> 00:00:56,100
+So this is normal.
+
+16
+00:00:56,120 --> 00:00:59,990
+Q However there is something called Jaypee.
+
+17
+00:01:00,040 --> 00:01:06,610
+Q This is Jaba persistent QAD language in.
+
+18
+00:01:06,710 --> 00:01:17,150
+Q Well what we do is we query from the database tables in J-P Q will be created from entities.
+
+19
+00:01:17,210 --> 00:01:18,710
+So this is from table.
+
+20
+00:01:18,710 --> 00:01:26,390
+This is from relationship if Will queries from where is Gilchrest queries from tables whereas JP Cuil
+
+21
+00:01:26,570 --> 00:01:30,700
+queries from entities What would you be.
+
+22
+00:01:30,750 --> 00:01:39,390
+Q Well queries that we write those are converted into as queries by the JPA implementation that is hibernate.
+
+23
+00:01:39,620 --> 00:01:47,080
+What we write would be JP queries which would be right using entities to read AJP queries using them.
+
+24
+00:01:47,210 --> 00:01:49,280
+And those are converted into Escuela queries.
+
+25
+00:01:49,280 --> 00:01:50,750
+Talking to the tables.
+
+26
+00:01:50,960 --> 00:01:56,770
+So typically we'll provide a way of writing queries using entities.
+
+27
+00:01:57,020 --> 00:01:57,890
+How do we write.
+
+28
+00:01:57,940 --> 00:01:58,910
+Well queries.
+
+29
+00:01:59,090 --> 00:02:05,210
+So for example select start from course later I want to do a query of this can select start from course
+
+30
+00:02:06,280 --> 00:02:07,300
+in JP.
+
+31
+00:02:07,390 --> 00:02:09,520
+This index will be very simple.
+
+32
+00:02:09,650 --> 00:02:12,800
+So select here instead of start.
+
+33
+00:02:12,800 --> 00:02:17,510
+I would need to do something else so from there I would want to weigh the From entity.
+
+34
+00:02:17,510 --> 00:02:23,560
+Here we are not talking about this table of course but we are actually talking about the entity the
+
+35
+00:02:23,570 --> 00:02:30,280
+entity which we have in here is of course that also having the same name as Kosilek start from course
+
+36
+00:02:30,800 --> 00:02:32,000
+as the name of the entity.
+
+37
+00:02:32,240 --> 00:02:34,980
+And I'm giving it to alias C.
+
+38
+00:02:35,270 --> 00:02:36,190
+Say.
+
+39
+00:02:36,260 --> 00:02:43,590
+C from CT that's the the you create just we just select start from code.
+
+40
+00:02:43,760 --> 00:02:48,920
+What we do in this step will write a few simple J-P queries and try and execute them.
+
+41
+00:02:49,160 --> 00:02:55,390
+So let's start with excluding this greatest legacy from what we lose we'll create a simple unit just
+
+42
+00:02:55,500 --> 00:03:05,180
+copy the cost repository that we have and I call this JP Cuil test and inside this would remove everything
+
+43
+00:03:05,180 --> 00:03:07,980
+else except for the first.
+
+44
+00:03:08,060 --> 00:03:15,350
+All the other stuff and all here would want to be able to execute a query instead of course repository
+
+45
+00:03:15,490 --> 00:03:22,910
+we would want to use entity manager and entity manager or I can just say.
+
+46
+00:03:23,300 --> 00:03:30,220
+And the I can execute crazy you don't create query.
+
+47
+00:03:30,430 --> 00:03:33,900
+That's the way you can actually create a query over here.
+
+48
+00:03:33,930 --> 00:03:36,210
+I can't pass in what we have written in here.
+
+49
+00:03:36,210 --> 00:03:37,480
+It's a legacy from code.
+
+50
+00:03:37,520 --> 00:03:41,660
+So this is the way you can create a query and you can execute the query.
+
+51
+00:03:41,740 --> 00:03:49,060
+I think that does not get this list and I will take this and store it to a new local variable.
+
+52
+00:03:49,280 --> 00:03:56,840
+This is returning a results back and let larget out larget dot info.
+
+53
+00:03:56,900 --> 00:04:03,750
+I'll put the query also just for the US to be able to search and it's returning what it's strict running
+
+54
+00:04:03,800 --> 00:04:06,030
+this value back what does that value.
+
+55
+00:04:06,490 --> 00:04:09,550
+I rarely use this sort of list.
+
+56
+00:04:09,720 --> 00:04:10,170
+Right.
+
+57
+00:04:10,190 --> 00:04:15,210
+So let's now run this unit test and see what it returns back remember.
+
+58
+00:04:15,380 --> 00:04:19,510
+And you can see that this is what it is printed on the log.
+
+59
+00:04:19,880 --> 00:04:23,090
+So it seeing all the things that we expected.
+
+60
+00:04:23,090 --> 00:04:28,970
+So I think web services in hundred steps and lodges in hundred steps updated the Nepean 50 steps and
+
+61
+00:04:29,030 --> 00:04:31,890
+all the other kind of stuff that present in here.
+
+62
+00:04:32,060 --> 00:04:34,200
+That's pretty cool right now.
+
+63
+00:04:34,310 --> 00:04:42,910
+We're able to create using the J-P Q And we will want to do a few more things with the JP Cuil that
+
+64
+00:04:42,910 --> 00:04:45,100
+tried a couple of more simple queries.
+
+65
+00:04:45,220 --> 00:04:49,440
+One of the things here is that I'm using a R-Type.
+
+66
+00:04:49,600 --> 00:04:55,300
+I'm not really using the fact that this query would return a call back.
+
+67
+00:04:55,300 --> 00:04:56,320
+How do I do that.
+
+68
+00:04:56,350 --> 00:05:02,390
+How can I get this greedy to say that I am going to return a call back.
+
+69
+00:05:02,650 --> 00:05:07,270
+I can use another parameter of course taught us.
+
+70
+00:05:07,500 --> 00:05:10,900
+So over here what we're doing is die.
+
+71
+00:05:11,140 --> 00:05:15,710
+So now when I actually let's create a local variable out of this.
+
+72
+00:05:15,700 --> 00:05:17,120
+So this is a query.
+
+73
+00:05:17,140 --> 00:05:23,890
+So when we create the query here we are actually using something called a table the query to type query.
+
+74
+00:05:23,890 --> 00:05:26,350
+Of course we are saying this is lightning a quarterback.
+
+75
+00:05:26,400 --> 00:05:33,780
+However if you look at this if I expect this to a local variable basing all that and say query this
+
+76
+00:05:33,820 --> 00:05:35,970
+is using a simple liquidy type.
+
+77
+00:05:36,010 --> 00:05:40,640
+Great is when I'm passing the pipe I'm saying this is the gradiently twigs.
+
+78
+00:05:40,930 --> 00:05:47,920
+And this is the kind of results that I expect back I expect results of type called Dark class.
+
+79
+00:05:47,930 --> 00:05:55,380
+Now when I get the results back I can add type argument as well so I can change type 2 list of course.
+
+80
+00:05:55,450 --> 00:05:56,250
+This is much better.
+
+81
+00:05:56,260 --> 00:06:02,290
+Right so this is better pipes I'm saying instead of just list and think this is a list of course type
+
+82
+00:06:02,290 --> 00:06:06,450
+queries are always better because they make it easy to read your program.
+
+83
+00:06:06,460 --> 00:06:10,290
+It makes it very clear what results you are expecting back.
+
+84
+00:06:10,310 --> 00:06:13,050
+So this is fine by A-type typed.
+
+85
+00:06:13,060 --> 00:06:16,200
+So here we are getting a paper created.
+
+86
+00:06:16,750 --> 00:06:19,550
+The other thing is just like the query we executed.
+
+87
+00:06:19,570 --> 00:06:22,570
+You can also use very conditions in here.
+
+88
+00:06:22,570 --> 00:06:29,870
+So below are a simple way or condition in here so find by id ups what Spike But actually let's just
+
+89
+00:06:29,870 --> 00:06:36,440
+say grvy basic art you can call this JP Cuil basic
+
+90
+00:06:39,370 --> 00:06:42,420
+and this is Jaypee.
+
+91
+00:06:42,450 --> 00:06:46,210
+Q typed and this is JP
+
+92
+00:06:49,110 --> 00:06:53,090
+an all here Sexta from CT.
+
+93
+00:06:55,470 --> 00:07:07,780
+Our condition within single rare name like per cent stips.
+
+94
+00:07:07,830 --> 00:07:10,120
+Now let's see what this would print.
+
+95
+00:07:10,260 --> 00:07:21,500
+This is from course where name like hundert these two courses are printed in the control of Web services
+
+96
+00:07:21,510 --> 00:07:26,920
+in hundred stirps and timbering Boudinot understood those two things which end with hundreds steps are
+
+97
+00:07:26,920 --> 00:07:31,030
+printed in so despicable as we talked earlier.
+
+98
+00:07:31,060 --> 00:07:35,130
+We are using entities in our future.
+
+99
+00:07:35,320 --> 00:07:38,560
+We will actually use the relationships as well.
+
+100
+00:07:38,560 --> 00:07:40,410
+Here we are just using entities.
+
+101
+00:07:40,600 --> 00:07:46,590
+When we define the relationship between cause and student what we'll do is we'll use that relationship
+
+102
+00:07:46,600 --> 00:07:53,990
+also to write create is using J-P kill for now all great is that we have written out very simple ones.
+
+103
+00:07:54,140 --> 00:07:55,190
+The next step bovver.
+

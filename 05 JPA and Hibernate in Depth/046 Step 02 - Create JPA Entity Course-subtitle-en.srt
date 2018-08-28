@@ -1,0 +1,216 @@
+1
+00:00:03,480 --> 00:00:10,940
+Come back in this step let's create a simple entity for something called of course during the next steps
+
+2
+00:00:11,060 --> 00:00:17,020
+we would be playing around with these concepts called coursers students reviews and things like that.
+
+3
+00:00:17,030 --> 00:00:19,490
+These are very simple things to understand right.
+
+4
+00:00:19,550 --> 00:00:23,790
+Instructors create courses students do the quarters and leave reviews.
+
+5
+00:00:23,810 --> 00:00:25,500
+That's basically the concept.
+
+6
+00:00:25,640 --> 00:00:28,990
+And let's start with creating an entity for a cause.
+
+7
+00:00:29,300 --> 00:00:35,060
+So I'd start with creating a new class so let's create a new class and I would want to call this code
+
+8
+00:00:35,360 --> 00:00:43,160
+and all the entities because we'll be an entity entities like bean plus plus a typical java bean can
+
+9
+00:00:43,160 --> 00:00:45,190
+be used for any purpose right.
+
+10
+00:00:45,220 --> 00:00:50,960
+I can use it to store data to the database or I can take the data from the database put it in it and
+
+11
+00:00:50,960 --> 00:00:56,870
+use it to transfer the data to other leaders and lot of other things entities the specialization of
+
+12
+00:00:56,930 --> 00:00:57,810
+the bean.
+
+13
+00:00:58,010 --> 00:01:05,830
+We use an annotation at entity to define that us being is an entity so this is the entity in addition
+
+14
+00:01:05,840 --> 00:01:07,730
+this is like any other our being.
+
+15
+00:01:07,850 --> 00:01:14,280
+But we use an entity in addition to make this an entity import entity.
+
+16
+00:01:14,570 --> 00:01:20,820
+Jack's persistence and inside the code all the different fields that I would want.
+
+17
+00:01:20,900 --> 00:01:24,140
+Let's start with the ID field in relational design.
+
+18
+00:01:24,140 --> 00:01:32,210
+All table should have primary key primary key basically is something which is used to uniquely identify
+
+19
+00:01:32,300 --> 00:01:33,990
+a row in that table.
+
+20
+00:01:34,070 --> 00:01:41,480
+And the way we define primary keys is by using an ad to indicate that this is an ID field this is the
+
+21
+00:01:41,480 --> 00:01:43,070
+primary key.
+
+22
+00:01:43,070 --> 00:01:47,830
+The other thing I would want to make sure is I would want to shape the agenda this for us so I'll say
+
+23
+00:01:47,830 --> 00:01:49,270
+it generated value.
+
+24
+00:01:49,400 --> 00:01:51,550
+I would not want to assign an ID field.
+
+25
+00:01:51,560 --> 00:01:56,640
+I would want to generate that for me so I'll say a generated value.
+
+26
+00:01:56,720 --> 00:02:02,770
+The other field I would want to start off with is name a private string name.
+
+27
+00:02:02,780 --> 00:02:07,930
+We basically have a course with a long ID and a private string.
+
+28
+00:02:08,110 --> 00:02:10,650
+And those are the two fields that we would want to use.
+
+29
+00:02:10,760 --> 00:02:14,950
+Now create a simple constructor public course.
+
+30
+00:02:15,110 --> 00:02:17,300
+I don't want others to provide the ID.
+
+31
+00:02:17,420 --> 00:02:20,970
+I only want them to provide the string.
+
+32
+00:02:21,570 --> 00:02:27,470
+That's a constructor I would want to define what is using the courts class will provide a name and hibernate
+
+33
+00:02:27,470 --> 00:02:28,840
+would provide them.
+
+34
+00:02:29,150 --> 00:02:34,180
+So this dot name could do it for this being alone.
+
+35
+00:02:34,210 --> 00:02:35,700
+We would do this manually.
+
+36
+00:02:35,960 --> 00:02:40,940
+Let's have a translator for the name created for the name.
+
+37
+00:02:40,940 --> 00:02:43,530
+Let's have a good answer to that as well.
+
+38
+00:02:43,640 --> 00:02:47,960
+So General getters and setters for name.
+
+39
+00:02:48,060 --> 00:02:50,520
+So now we have to get a sense it does for the name.
+
+40
+00:02:50,530 --> 00:02:57,360
+All chief does generate all chiefdoms are rightly thought to generate and I would want to now generate
+
+41
+00:02:57,440 --> 00:03:00,000
+a get and settle for ID for ID.
+
+42
+00:03:00,000 --> 00:03:04,490
+I only want to generate get that because I don't want others to say that.
+
+43
+00:03:04,650 --> 00:03:08,520
+So I'll choose only to get to that.
+
+44
+00:03:08,700 --> 00:03:13,900
+We have getters and setters for any gaitered for ID.
+
+45
+00:03:13,900 --> 00:03:21,790
+We have a contractor one of the things DP mandate is a default constructor what would happen is when
+
+46
+00:03:21,790 --> 00:03:27,910
+I provide a constructor the default argument constructor that jowled typically provides will no longer
+
+47
+00:03:27,910 --> 00:03:29,000
+be available.
+
+48
+00:03:29,140 --> 00:03:33,960
+To counter that I would need to provide a default no argument constructor.
+
+49
+00:03:34,120 --> 00:03:36,740
+This construct will be used by G.P.A. to create this.
+
+50
+00:03:36,760 --> 00:03:40,010
+This is one of the things which is mandated by JP.
+
+51
+00:03:40,030 --> 00:03:46,040
+You need to have no argument constructor protected will ensure that other classes which dont pinheaded
+
+52
+00:03:46,060 --> 00:03:52,540
+from court will not be able to use de-construct be defined because the entity in the next step will
+
+53
+00:03:52,720 --> 00:03:56,390
+create a repository so that we can access the data from the court.
+
+54
+00:03:56,480 --> 00:04:01,230
+We can create courses delete courses and things like that to you in the next step.
+

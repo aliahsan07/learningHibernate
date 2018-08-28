@@ -1,0 +1,204 @@
+1
+00:00:01,960 --> 00:00:07,660
+Welcome back in this and the subsequent steps we would start looking at some of the important annotations
+
+2
+00:00:07,870 --> 00:00:11,100
+which are provided by GPA and hibernate.
+
+3
+00:00:11,220 --> 00:00:18,610
+So we should be careful about using Hibernate annotations because when we use g.p one of the flexibilities
+
+4
+00:00:18,610 --> 00:00:25,630
+you get is you can easily shift from hibernate to any persistent provider or any other JPA implementation
+
+5
+00:00:25,630 --> 00:00:27,760
+like toppling Korder that.
+
+6
+00:00:27,790 --> 00:00:34,230
+But when you use the hibernate bespeak feature that means you are tied to hibernate.
+
+7
+00:00:34,240 --> 00:00:41,860
+So always remember that when you're using Hibernate will feature Let's now start with one of the first
+
+8
+00:00:41,950 --> 00:00:45,440
+annotations which is at the table.
+
+9
+00:00:45,700 --> 00:00:52,740
+What does it use up at table at table is used to define the name of the table.
+
+10
+00:00:52,870 --> 00:00:57,580
+You know what we're doing is we are mapping a code stable to code entity.
+
+11
+00:00:57,640 --> 00:01:01,930
+How would that be situations where this table is called something else.
+
+12
+00:01:01,930 --> 00:01:06,460
+This table might be called code details or something of that kind.
+
+13
+00:01:06,460 --> 00:01:10,000
+So in those kind of situations we can use the table with the name.
+
+14
+00:01:10,010 --> 00:01:17,050
+So for example I can't right now say the name of the table is called Details Howard the entity I would
+
+15
+00:01:17,050 --> 00:01:19,990
+want to store it in is course.
+
+16
+00:01:20,010 --> 00:01:28,950
+Now let's import the Jarek persistence table into the table in and I would stop and start the application
+
+17
+00:01:28,950 --> 00:01:29,930
+again.
+
+18
+00:01:30,020 --> 00:01:36,450
+You would see that the table which would be used would be called detail so the table annotation is used
+
+19
+00:01:36,450 --> 00:01:38,600
+to define the name of the.
+
+20
+00:01:38,610 --> 00:01:46,940
+But you can see that the application context fails just died because the data that sequel contains or
+
+21
+00:01:46,940 --> 00:01:52,160
+does it contain it contains cause it does not know about the details.
+
+22
+00:01:52,250 --> 00:01:58,190
+So let's look at the schema which is being created first.
+
+23
+00:01:58,500 --> 00:02:04,920
+You can see that the name of the table which is being created is called underscores the dangers the
+
+24
+00:02:05,010 --> 00:02:11,630
+court and the maps do courts underscore details table actually here we are seeing code details.
+
+25
+00:02:11,670 --> 00:02:18,150
+So it automatically changes that and creates course underscored the delays because typically when we
+
+26
+00:02:18,150 --> 00:02:24,140
+are creating tables the convention which is used is two separate word by underscores here.
+
+27
+00:02:24,170 --> 00:02:29,520
+Instead of course I would need to state code underscored details underscore details could the details
+
+28
+00:02:30,100 --> 00:02:32,440
+listed the application.
+
+29
+00:02:32,580 --> 00:02:39,890
+Now let's refresh our connection to hash to control and cause details.
+
+30
+00:02:39,920 --> 00:02:43,730
+You can see that the table name is now called Details ID name.
+
+31
+00:02:43,760 --> 00:02:49,460
+So even though inside our entities we call it code inside the table.
+
+32
+00:02:49,520 --> 00:02:50,840
+It is called details.
+
+33
+00:02:50,840 --> 00:02:56,050
+Also the other thing you would observe the fact that the queries and everything are now generated to
+
+34
+00:02:56,120 --> 00:03:02,720
+call underscore DDL so it's now select start from chord's underscored details it update course underscored
+
+35
+00:03:02,770 --> 00:03:03,710
+details.
+
+36
+00:03:03,710 --> 00:03:07,840
+So you'll see that the G.P.A. is actually doing a lot of magic.
+
+37
+00:03:07,840 --> 00:03:14,240
+So even when the entity and the table names are different when you doing something with the code the
+
+38
+00:03:14,240 --> 00:03:18,480
+updates are directly sent out to the court underscored details.
+
+39
+00:03:18,500 --> 00:03:24,810
+But the only thing that you would need to do is to map it you map it once and you can forget about it.
+
+40
+00:03:24,810 --> 00:03:29,990
+So the fact that your entity name is different from the table name you don't need to tell that in every
+
+41
+00:03:29,990 --> 00:03:36,800
+query in every repository and all that kind of stuff that you need to do is to link once to JPA using
+
+42
+00:03:36,820 --> 00:03:42,310
+the table and addition and that's it you can forget about it or that I'll go back.
+
+43
+00:03:42,320 --> 00:03:43,820
+I don't want to use cause details.
+
+44
+00:03:43,820 --> 00:03:52,040
+I would want to stick with codes so I would actually I could do either this or I can remove the annotation
+
+45
+00:03:52,040 --> 00:03:59,390
+completely and I would actually even with the changes which I present in here and restart it now you
+
+46
+00:03:59,390 --> 00:04:01,200
+would see that we are back to normal.
+
+47
+00:04:01,220 --> 00:04:08,420
+We would be using the Course table the table name is called We are inserting dating to court and this
+
+48
+00:04:08,420 --> 00:04:21,340
+would stop the court Dibon and let's refresh its color codes and give everything as expected as we had
+
+49
+00:04:21,420 --> 00:04:27,220
+earlier before this step if your name of the entity is different from the name of the table then you
+
+50
+00:04:27,220 --> 00:04:30,250
+can use the table annotation.
+
+51
+00:04:30,490 --> 00:04:31,680
+And in the next step by.
+

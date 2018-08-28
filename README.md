@@ -1,1 +1,1 @@
-hibernate_learning
+Windows edition

@@ -1,0 +1,212 @@
+1
+00:00:05,150 --> 00:00:09,790
+Welcome back in the step we look at named query annotations.
+
+2
+00:00:10,030 --> 00:00:15,510
+So if you look at this specific thing we are actually hand-coding decree in.
+
+3
+00:00:15,730 --> 00:00:20,260
+So this means if I have to use it to use the query somebody else they will need to hardcoded again.
+
+4
+00:00:20,410 --> 00:00:26,080
+I would need to type in the entire area again named queries will help you to prevent that.
+
+5
+00:00:26,140 --> 00:00:31,210
+So with named queries you can assign a name to a query and use it.
+
+6
+00:00:31,210 --> 00:00:32,960
+So how do I create a named query.
+
+7
+00:00:32,960 --> 00:00:39,400
+It's very simple I can go to court for example this is the entity here right here I can add a Nemed
+
+8
+00:00:39,520 --> 00:00:51,390
+queries a named query about Ixtoc persistence and all here I can fake the name for a query that get
+
+9
+00:00:51,540 --> 00:00:54,500
+on course.
+
+10
+00:00:54,660 --> 00:01:04,830
+I would like to end it with a query query get all quotes this and comma you can specify the query set.
+
+11
+00:01:05,310 --> 00:01:10,020
+What's the query query we want to use.
+
+12
+00:01:10,020 --> 00:01:14,380
+Is this select see from quotes.
+
+13
+00:01:17,600 --> 00:01:22,550
+This becomes a named query and this can be used in other things.
+
+14
+00:01:22,550 --> 00:01:31,070
+Now I can use here instead of create query I can say create a named query to create named query using
+
+15
+00:01:31,130 --> 00:01:35,760
+what is to get all courses.
+
+16
+00:01:36,070 --> 00:01:43,660
+You get to create named query and it was created Get this.
+
+17
+00:01:43,690 --> 00:01:47,980
+So let's see what would happen if you run as a unit test.
+
+18
+00:01:47,980 --> 00:01:49,430
+I'm running all three tests.
+
+19
+00:01:49,570 --> 00:01:50,120
+OK.
+
+20
+00:01:50,200 --> 00:01:51,570
+So this once.
+
+21
+00:01:51,760 --> 00:01:57,530
+So you would see that the queries are properly run and you are getting the right details out.
+
+22
+00:01:57,800 --> 00:01:59,270
+This is selected from.
+
+23
+00:01:59,320 --> 00:02:01,050
+That's perfect.
+
+24
+00:02:01,150 --> 00:02:06,770
+It's getting all the details and it's printing all the details out here that's good so that unnamed
+
+25
+00:02:06,880 --> 00:02:09,280
+query where you'd see that.
+
+26
+00:02:09,280 --> 00:02:13,480
+Here we have another query that I would want to create a named query for this as well.
+
+27
+00:02:13,480 --> 00:02:15,110
+How can they do that.
+
+28
+00:02:15,340 --> 00:02:25,160
+And let's say I come here and say at named query name is it to create a Get hundred step code.
+
+29
+00:02:25,160 --> 00:02:26,590
+This let's call it that way.
+
+30
+00:02:26,810 --> 00:02:32,190
+And I would try and put the queries equal to the query which I copied.
+
+31
+00:02:32,460 --> 00:02:33,480
+Ha.
+
+32
+00:02:33,680 --> 00:02:40,610
+You can see that there is an error coming up saying duplicate an addition of a non-repeatable type named
+
+33
+00:02:40,880 --> 00:02:42,590
+query.
+
+34
+00:02:42,650 --> 00:02:45,920
+So this is not really a repeatable annotation.
+
+35
+00:02:46,160 --> 00:02:51,260
+So because of that what happens is I cannot do something of this kind.
+
+36
+00:02:51,260 --> 00:02:56,740
+What I would need to do is when I want to define multiple name queries I would need to use another.
+
+37
+00:02:56,740 --> 00:03:04,230
+In addition it is called named Kuwaiti's so jolly expose's since named queries.
+
+38
+00:03:04,640 --> 00:03:10,580
+And while we're here I can see value is equal to all here.
+
+39
+00:03:10,670 --> 00:03:15,680
+I have to define and write off named queries.
+
+40
+00:03:16,580 --> 00:03:21,870
+So name query come up under that name for it.
+
+41
+00:03:23,930 --> 00:03:28,340
+And this is how you would do a set of name queries.
+
+42
+00:03:28,430 --> 00:03:32,400
+So that is how you define multiple name queries.
+
+43
+00:03:32,390 --> 00:03:36,160
+This is not really any easy way of doing it.
+
+44
+00:03:36,230 --> 00:03:41,110
+So now I have defined this so I would want to use the named query here as well.
+
+45
+00:03:41,120 --> 00:03:45,970
+So let's do that create named query.
+
+46
+00:03:46,250 --> 00:03:53,010
+That's cool and that should run the unit as depicted in this league.
+
+47
+00:03:53,100 --> 00:03:58,370
+So it's a green but if you look at the queries you'll see that the queries are perfectly fine.
+
+48
+00:03:58,740 --> 00:04:00,210
+So that's cool isn't it.
+
+49
+00:04:00,210 --> 00:04:06,800
+So in this step what we look at Didn't named query and didn't name the Kuwaitis and the station name
+
+50
+00:04:07,020 --> 00:04:09,590
+is used when you want to just define one query.
+
+51
+00:04:09,930 --> 00:04:15,540
+But when you want to define multiple queries then you need to use a combination of named query and named
+
+52
+00:04:15,660 --> 00:04:18,190
+queries until the next step.
+
+53
+00:04:18,260 --> 00:04:18,480
+Boy.
+

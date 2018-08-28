@@ -1,0 +1,224 @@
+http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#ImplicitNamingStrategy
+
+
+As a JPA provider, Hibernate implements the JPA and the association between JPA interfaces and Hibernate specific implementations. (figure 1)
+
+SessionFactory
+A thread-safe and immutable repr of the mapping of the application domain model to a db. Acts as a factory for org.hibernate.Session instances.
+The EntityManagerFactory is the JPA equivalent of a SessionFactory and basically, those two converge into the same SessionFactory implementation.
+A SessionFactory is very expensive to create, so, for any given database, the application should have only one associated SessionFactory
+The SessionFactory maintains services that Hibernate uses across all Session(s) such as second level caches, connection pools, transaction system integrations, etc.
+
+Session
+A single-threaded, short-lived object conceptually modeling a "Unit of Work" PoEAA. In JPA nomenclature, the Session is represented by an EntityManager.
+Behind the scenes, the Hibernate Session wraps a JDBC java.sql.Connection and acts as a factory for org.hibernate.Transaction instances. It maintains a generally "repeatable read" persistence context (first level cache) of the application domain model.
+
+Transaction
+A single-threaded, short-lived object used by the application to demarcate individual physical transaction boundaries. EntityTransaction is the JPA equivalent and both act as an abstraction API to isolate the application from the underlying transaction system in use (JDBC or JTA).
+
+
+Mapping Types
+The ability to read/write this data from/to the db is the function of a Hibernate type. 
+Type -> Defines a mapping from a Java type to an JDBC datatype
+This Hibernate type also describes various behavioral aspects of the Java type such as how to check for equality, how to clone values, etc.
+The Hibernate type is neither a Java type nor a SQL data type. It provides information about both of these as well as understanding marshalling between.
+
+JDBC types examples java.sql.Types.Array
+
+In the broadest sense Hibernate categorizes types into two groups:
+1) Value 2) Entity
+A value type is a piece of data that does not define its own lifecycle. It is, in effect, owned by an entity, which defines its lifecycle.
+all the state of an entity is made up entirely of value types. These state fields or JavaBean properties are termed persistent attributes.
+Value types are further classified into three sub-categories:
+Basic types
+Embeddable types
+Collection Types
+
+2) Entity
+Entities, by nature of their unique identifier, exist independently of other objects whereas values do not.
+Entities are domain model classes which correlate to rows in a database table, using a unique identifier.
+
+How does Hibernate map object model to relational database.
+Step 1:  determining a proper logical name from the domain model mapping. A logical name can be either explicitly specified by the user (using @Column or @Table e.g.) or it can be implicitly determined by Hibernate through an ImplicitNamingStrategy contract.
+Step 2: resolving of this logical name to a physical name which is defined by the PhysicalNamingStrategy contract.
+
+For JPA compatibility: JPA defines inherent rules about implicit logical name determination. If JPA provider portability is a major concern, or if you really just like the JPA-defined implicit naming rules, be sure to stick with ImplicitNamingStrategyJpaCompliantImpl (the default)
+
+ImplicitNamingStrategy
+When an entity does not explicitly name the db table that it maps to, we need to implicitly determine the table name. Or when a particular attribute does not explicitly name the database column that it maps to, we need to implicitly determine that column name
+There are examples of the role of the org.hibernate.boot.model.naming.ImplicitNamingStrategy contract to determine a logical name when the mapping did not provide an explicit name.
+Hibernate defines multiple ImplicitNamingStrategy implementations out-of-the-box. Applications are also free to plug in their custom implementations. 
+There are multiple ways to specify the ImplicitNamingStrategy to use. 
+
+PhysicalNamingStrategy
+The default implementation is to simply use the logical name as the physical name. However applications and integrations can define custom implementations of this PhysicalNamingStrategy contract. 
+
+Basic Types
+Basic value types usually map a single db column, to a single, non-aggregrated Java type. Hibernate provides a number of built-in basic types, which follow the natural mappings recommended by the JDBC specifications.
+Hibernate-provided Basic types example
+(Hibernate Type) StringType (JDBC Type) VARCHAR (Java Type) java.lang.String
+
+The Basic annotation (@Basic)
+A basic type is denoted by javax.persistence.Basic. It is assumed by default, so it can be ignored.
+@Basic signifies that an attribute is to be persisted and a standard mapping is to be used. It has parameters which allow you to specify whether the attribute is to be lazily loaded and whether it's nullable.
+The @Basic annotation defines 2 attributes.
+1) optional: boolean (defaults to true)
+Defines whether this attribute allows nulls. JPA defines this as "a hint", which essentially means that it effect is specifically required. As long as the type is not primitive, Hibernate takes this to mean that the underlying column should be NULLABLE.
+2) fetch:  FetchType (defaults to EAGER)
+Defines whether this attribute should be fetched eagerly or lazily. JPA says that EAGER is a requirement to the provider (Hibernate) that the value should be fetched when the owner is fetched, while LAZY is merely a hint that the value is fetched when the attribute is accessed. Hibernate ignores this setting for basic types unless you are using bytecode enhancement.
+
+The @Column annotation
+JPA defines rules for implicitly determining the name of tables and columns. 
+For basic type attributes, the implicit naming rule is that the column name is the same as the attribute name. If that implicit naming rule does not meet your requirements, you can explicitly tell Hibernate (and other providers) the column name to use.
+
+BasicTypeRegistry
+how did Hibernate know to use its org.hibernate.type.StringType for mapping for java.lang.String attributes, or its org.hibernate.type.IntegerType for mapping java.lang.Integer attributes?
+The answer lies in a service inside Hibernate called the org.hibernate.type.BasicTypeRegistry, which essentially maintains a map of org.hibernate.type.BasicType (a org.hibernate.type.Type specialization) instances keyed by a name
+
+We can explicitly define a Hibernate Type for Java Type. 
+@org.hibernate.annotations.Type( type = "nstring" )
+	private String name;
+
+Custom BasicTypes
+Hibernate makes it relatively easy for developers to create their own basic type mappings type. For example, you might want to persist properties of type java.util.BigInteger to VARCHAR columns, or support completely new types.
+There are two approaches to developing a custom type:
+- implementing a BasicType and registering it
+- implementing a UserType which doesn’t require type registration
+
+Mapping enums
+Hibernate supports the mapping of Java enums as basic value types in a number of different ways.
+@Enumerated
+The original JPA-compliant way to map enums was via the @Enumerated or @MapKeyEnumerated for map keys annotations, working on the principle that the enum values are stored according to one of 2 strategies indicated by javax.persistence.EnumType:
+- Ordinal
+- String
+
+@Generated annotation
+The @Generated annotation is used so that Hibernate can fetch the currently annotated property after the entity has been persisted or updated. For this reason, the @Generated annotation accepts a GenerationTime enum value.
+
+Example
+@Generated( value = GenerationTime.ALWAYS )
+@Column(columnDefinition =
+		"AS CONCAT(" +
+		"	COALESCE(firstName, ''), " +
+		"	COALESCE(' ' + middleName1, ''), " +
+		"	COALESCE(' ' + middleName2, ''), " +
+		"	COALESCE(' ' + middleName3, ''), " +
+		"	COALESCE(' ' + middleName4, ''), " +
+		"	COALESCE(' ' + middleName5, ''), " +
+		"	COALESCE(' ' + lastName, '') " +
+		")")
+private String fullName;
+
+When the Person entity is persisted, Hibernate is going to fetch the calculated fullName column from the database, which concatenates the first, middle, and last name.
+
+@GeneratorType annotation
+
+@WhereJoinTable
+
+
+
+Embeddable Types
+Historically Hibernate called these components. JPA calls them embeddables. Either way, the concept is the same: a composition of values.
+
+For example, we might have a Publisher class that is a composition of name and country, or a Location class that is a composition of country and city.
+
+Entity Types
+- POJO models
+- Prefer non-final clauses
+A central feature of Hibernate is the ability to load lazily certain entity instance variables (attributes) via runtime proxies. 
+This feature depends upon the entity class being non-final or else implementing an interface that declares all the attribute getters/setters.
+you should also avoid declaring persistent attribute getters and setters as final.
+- The entity class should have a no-argument constructor. Both Hibernate and JPA require this.
+- Declare getters and setters for persistent attributes
+The JPA specification requires this, otherwise, the model would prevent accessing the entity persistent state fields directly from outside the entity itself.
+Although Hibernate does not require it, it is recommended to follow the JavaBean conventions and define getters and setters for entity persistent attributes.
+
+@Entity
+The @Entity annotation defines just one attribute name which is used to give a specific entity name for use in JPQL queries.
+To explicitly give the name of the table or to specify other information about the table, we would use the javax.persistence.Table annotation.
+
+Implementing Equals() and HashCode()
+The docs say it is a surpisingly tricky situation when it comes to ORM regarding whether to implement equals and hashcode.
+There is one absolute case: a class that acts as an identifier must implement equals/hashCode based on the id value(s).
+Normally most Java objects provide built in said methods but what is the fuss about. 
+This starts to break down when you start to think about the possibility of multiple instances of a class representing the same data.
+This is, in fact, exactly the case when dealing with data coming from a database.
+Every time we load a specific Person from the database we would naturally get a unique instance. Hibernate, however, works hard to make sure that does not happen within a given Session.
+In fact, Hibernate guarantees equivalence of persistent identity (database row) and Java identity inside a particular session scope
+
+Does Hibernate use equals() and hashCode() to check if objects are dirty and need to be persisted.
+
+We cannot use id or time that is created by Hibernate to use in equals() function. 
+What would would need is to come up with a business key that uniquely identifies each entity.
+
+Equals and hashcode might lead to cyclic dependencies (how does that affect lazy loading?)
+Another potential issue that can happen is Lazy instantiation of entities.
+This can lead to LazyInitializationException when equals or hash code is called on an entity that has been detached. 
+Remember to check what the FetchType default is as JPA Spec is different then Hibernate which is Lazy by default for all relationship types.
+
+Across the sessions, the object references of the same object are not going to be equal. (So that's a problem if you don't implement equals/HashCode)
+In cases where you will be dealing with entities outside of a Session (whether they be transient or detached), especially in cases where you will be using them in Java collections, you should consider implementing equals/hashCode.
+
+Defining a custom entity proxy
+By default, when it needs to use a proxy instead of the actual Pojo, Hibernate is going to use a Bytecode manipulation library like Javassist or Byte Buddy.
+However, if the entity class is final, Javassist will not create a proxy and you will get a Pojo even when you only need a proxy reference. In this case, you could proxy an interface that this particular entity implements. 
+
+It is possible to map your entities as dynamic proxies using the @Tuplizer annotation.
+
+Access Strategies
+- Field-based access
+To exclude a field from being part of the entity persistent state, the field must be marked with the @Transient annotation.
+@Id
+	private Long id;
+- Property-based access
+@Id
+	public Long getId() {
+		return id;
+	}
+
+Identifiers
+Identifiers model the primary key of an entity. They are used to uniquely identify each specific entity.
+Hibernate and JPA both make the following assumptions about the corresponding database column(s):
+UNIQUE
+NOT NULL
+IMMUTABLE
+To denote that an identifier attribute is generated, it is annotated with javax.persistence.GeneratedValue
+
+Associations
+@ManyToOne
+it establishes a relationship between a child entity and a parent.
+a foreign key relationship
+@OneToMany
+The @OneToMany association links a parent entity with one or more child entities. If the @OneToMany doesn’t have a mirroring @ManyToOne association on the child side, the @OneToMany association is unidirectional. 
+If there is a @ManyToOne association on the child side, the @OneToMany association is bidirectional and the application developer can navigate this relationship from both ends.
+When using a unidirectional @OneToMany association, Hibernate resorts to using a link table between the two joining entities.
+The @OneToMany association is by definition a parent association, even if it’s a unidirectional or a bidirectional one. Only the parent side of an association makes sense to cascade its entity state transitions to children
+@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Phone> phones = new ArrayList<>();
+When persisting the Person entity, the cascade will propagate the persist operation to the underlying Phone children as well. 
+Upon removing a Phone from the phones collection, the association row is deleted from the link table, and the orphanRemoval attribute will trigger a Phone removal as well.
+
+The unidirectional associations are not very efficient when it comes to removing child entities. In this particular example, upon flushing the persistence context, Hibernate deletes all database child entries and reinserts the ones that are still found in the in-memory persistence context.
+On the other hand, a bidirectional @OneToMany association is much more efficient because the child entity controls the association.
+Whenever a bidirectional association is formed, the application developer must make sure both sides are in-sync at all times. The addPhone() and removePhone() are utility methods that synchronize both ends whenever a child element is added or removed.
+Unlike the unidirectional @OneToMany, the bidirectional association is much more efficient when managing the collection persistence state.
+If the child entity lifecycle is bound to its owning parent so that the child cannot exist without its parent, then we can annotate the association with the orphan-removal attribute and dissociate the child will trigger a delete statement on the actual child table row as well.
+
+@OneToOne
+The @OneToOne association can either be unidirectional or bidirectional. A unidirectional association follows the relational database foreign key semantics, the client-side owning the relationship. A bidirectional association features a mappedBy @OneToOne parent side too
+When using a bidirectional @OneToOne association, Hibernate enforces the unique constraint upon fetching the child-side.
+
+Although you might annotate the parent-side association to be fetched lazily, Hibernate cannot honor this request since it cannot know whether the association is null or not.
+The only way to figure out whether there is an associated record on the child side is to fetch the child association using a secondary query. Because this can lead to N+1 query issues, it’s much more efficient to use unidirectional @OneToOne associations with the @MapsId annotation in place
+However, if you really need to use a bidirectional association and want to make sure that this is always going to be fetched lazily, then you need to enable lazy state initialization bytecode enhancement and use the @LazyToOne annotation as well.
+
+@ManyToMany
+The @ManyToMany association requires a link table that joins two entities. Like the @OneToMany association, @ManyToMany can be either unidirectional or bidirectional
+
+
+Hibernate uses its own collection implementations which are enriched with lazy-loading, caching or state change detection semantics
+For this reason, persistent collections must be declared as an interface type. 
+
+
+---------------------------------------------------------------------------------------------------
+	

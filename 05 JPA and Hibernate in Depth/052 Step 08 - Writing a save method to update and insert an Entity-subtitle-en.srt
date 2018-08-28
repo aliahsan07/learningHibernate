@@ -1,0 +1,200 @@
+1
+00:00:03,020 --> 00:00:08,370
+Well come back in this step what we'll do is we'll create the same method.
+
+2
+00:00:08,400 --> 00:00:14,280
+The thing is with the same method we would want to be able to insert and did data as well so we would
+
+3
+00:00:14,280 --> 00:00:19,770
+want to be able to insert and update data using the same instead.
+
+4
+00:00:19,770 --> 00:00:22,770
+So how do I find if it's an insert or update.
+
+5
+00:00:23,130 --> 00:00:27,310
+If course Daut get ID.
+
+6
+00:00:27,390 --> 00:00:32,160
+ID is null then it means I would want to insert the row.
+
+7
+00:00:32,180 --> 00:00:34,780
+So here I would want to do instead.
+
+8
+00:00:34,860 --> 00:00:38,970
+Else I would want to do that.
+
+9
+00:00:39,270 --> 00:00:40,740
+So that's basically what we would want to do.
+
+10
+00:00:40,740 --> 00:00:44,700
+So if the code ID is null then I would want to do it insert.
+
+11
+00:00:44,700 --> 00:00:47,080
+Else I would want to do it.
+
+12
+00:00:47,100 --> 00:00:49,730
+So how do I insert with an entity manager.
+
+13
+00:00:49,830 --> 00:00:50,780
+It's very simple.
+
+14
+00:00:50,830 --> 00:00:58,170
+And the manager puts this this is the method I would want to use assist because if of course ID is not
+
+15
+00:00:58,170 --> 00:01:06,550
+null then what I would need to do is I would want to do entity manager dot merge merge Cox.
+
+16
+00:01:06,930 --> 00:01:11,010
+Once it's done I would want to be able to return to court very simple method.
+
+17
+00:01:11,010 --> 00:01:13,630
+There's nothing complex in it in here.
+
+18
+00:01:13,740 --> 00:01:20,760
+So all that we do is if it goes out get ideas and then we would want to insert into the code else we
+
+19
+00:01:20,760 --> 00:01:24,160
+would want more because we would want to save the details.
+
+20
+00:01:24,210 --> 00:01:26,020
+That's basically what we need to do.
+
+21
+00:01:26,050 --> 00:01:29,090
+Now what I'll do is I'll save a new course.
+
+22
+00:01:29,190 --> 00:01:34,200
+I would want to use the command line right now which we create a demo application over here.
+
+23
+00:01:34,260 --> 00:01:35,280
+Let's do this.
+
+24
+00:01:35,310 --> 00:01:44,820
+So I would want to create a new code depositary dot so I would say repository save and create a new
+
+25
+00:01:44,820 --> 00:01:50,870
+course new course and I'll give it a name.
+
+26
+00:01:51,060 --> 00:01:55,280
+Let's say microcell recess in hundreds.
+
+27
+00:01:55,740 --> 00:01:58,160
+You can kill the application if it's already there.
+
+28
+00:01:58,200 --> 00:01:59,220
+Let's leave it there.
+
+29
+00:01:59,220 --> 00:02:00,180
+No it's not here.
+
+30
+00:02:00,180 --> 00:02:03,900
+So let's run the application again.
+
+31
+00:02:04,050 --> 00:02:08,870
+So at the start of the day my application what we are doing is we are inserting a new course.
+
+32
+00:02:08,940 --> 00:02:11,740
+And we would want to check that it's working fine.
+
+33
+00:02:11,780 --> 00:02:12,290
+Cool.
+
+34
+00:02:12,330 --> 00:02:20,400
+So you can see here that Dean said Gridley's file insert into code name ID values and what are the values
+
+35
+00:02:20,400 --> 00:02:26,910
+which are sent in it turning in Microsoft is says in hundred steps and the ID which is sent in is one
+
+36
+00:02:27,100 --> 00:02:29,240
+Abnett called a sequence.
+
+37
+00:02:29,460 --> 00:02:36,540
+So what we have is inside the code we said this is the generated value when we say it generated value
+
+38
+00:02:36,690 --> 00:02:43,350
+what hibernate does it uses the default of creating a sequence to hibernate create a sequence using
+
+39
+00:02:43,380 --> 00:02:46,770
+the sequence to find the next value for the ID.
+
+40
+00:02:46,770 --> 00:02:49,580
+So it first called the sequence it get the value back.
+
+41
+00:02:49,620 --> 00:02:52,740
+So it uses that ID to insert the code in.
+
+42
+00:02:52,740 --> 00:02:55,580
+Now I can go to the H2 control and see the data as well.
+
+43
+00:02:55,580 --> 00:02:59,330
+Let's do that right now to control panic.
+
+44
+00:02:59,340 --> 00:03:00,240
+You can see that Mike.
+
+45
+00:03:00,240 --> 00:03:01,970
+So is this In hundred steps.
+
+46
+00:03:01,990 --> 00:03:05,480
+Is present in here with an ID of 1.
+
+47
+00:03:05,550 --> 00:03:06,960
+So you can play and play around.
+
+48
+00:03:06,960 --> 00:03:12,510
+You can insert more rules into this table and play and play around to see if the insert is working fine.
+
+49
+00:03:12,510 --> 00:03:19,020
+So in this step what we did was we tried and created a same method and b I was successfully able to
+
+50
+00:03:19,020 --> 00:03:20,880
+insert a new chord in.
+

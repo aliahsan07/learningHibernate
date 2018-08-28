@@ -1,0 +1,392 @@
+1
+00:00:03,170 --> 00:00:08,910
+It come back in a step we would look at some of the burden in addition to which are related to updating
+
+2
+00:00:09,120 --> 00:00:16,020
+and maybe some of the Times a few applications had the requirements that I would want to store when
+
+3
+00:00:16,020 --> 00:00:22,190
+the specific rule is updated last time and when this rule was inserted I would want to store the created
+
+4
+00:00:22,190 --> 00:00:23,720
+name of that particular role.
+
+5
+00:00:23,730 --> 00:00:29,690
+And also I would want to store the updated time of that particular in those kinds of situations.
+
+6
+00:00:29,730 --> 00:00:32,240
+Hibernate provides a solution.
+
+7
+00:00:32,490 --> 00:00:35,330
+Remember this is not a solution which is provided by GPA.
+
+8
+00:00:35,400 --> 00:00:39,380
+So this is more of a custom thing which is provided by hibernate.
+
+9
+00:00:39,510 --> 00:00:41,900
+So let's say I would want to start play it.
+
+10
+00:00:41,940 --> 00:00:46,220
+I would want to be able to store the app the did did.
+
+11
+00:00:46,370 --> 00:00:50,950
+Or it's called The Last Updated.
+
+12
+00:00:51,330 --> 00:00:57,140
+And I would also want to be able to store the he did it.
+
+13
+00:00:57,340 --> 00:01:01,450
+I'd want to start with the date and the time as well.
+
+14
+00:01:01,700 --> 00:01:06,430
+So in these kind of situations you would use something called Local date.
+
+15
+00:01:06,470 --> 00:01:09,980
+This is one of the things which is introduced by Java 8 earlier.
+
+16
+00:01:09,980 --> 00:01:16,640
+We were used to using Java dot dot dot but that's not really a good thing because it kind of represents
+
+17
+00:01:16,640 --> 00:01:19,880
+the time daytime and all that kind of stuff.
+
+18
+00:01:20,060 --> 00:01:21,280
+That's Wayne Jowler 8.
+
+19
+00:01:21,290 --> 00:01:25,270
+It was made much more clearer and there is something called quality time.
+
+20
+00:01:25,400 --> 00:01:28,350
+So he would want to store date and time.
+
+21
+00:01:28,430 --> 00:01:34,330
+That's what we are specifying by using this local date time and here local time created.
+
+22
+00:01:34,490 --> 00:01:37,100
+These are the two columns that we want to make use of.
+
+23
+00:01:37,100 --> 00:01:42,200
+However we need to tell hibernate that this is the last update date column.
+
+24
+00:01:42,260 --> 00:01:48,200
+So every time you make a change to this row this column needs to be updated with the date stamp.
+
+25
+00:01:48,200 --> 00:01:56,450
+How do I tell that you can say that is by using an annotation update time of day time stamp.
+
+26
+00:01:56,510 --> 00:02:00,450
+If you look at it as I said earlier it's hibernated.
+
+27
+00:02:00,550 --> 00:02:04,340
+And additionally to hibernate in addition not really AJP annotation.
+
+28
+00:02:04,680 --> 00:02:11,030
+So that's something you need to remember and the other in addition which is present in here is at created
+
+29
+00:02:11,510 --> 00:02:13,140
+time.
+
+30
+00:02:13,260 --> 00:02:18,570
+Now let me add that in the timestamp and decrease in time stamp on the last updated and that we did
+
+31
+00:02:18,780 --> 00:02:22,690
+that a couple of things that we would need to do before we are ready to test them.
+
+32
+00:02:22,730 --> 00:02:27,950
+The first thing is data are not equal right in the data or that sequel be only populating the ID and
+
+33
+00:02:27,950 --> 00:02:34,340
+the name are not properly to the created date and the did it so I need to populate this data is data
+
+34
+00:02:34,460 --> 00:02:35,760
+inserted into the data isn't.
+
+35
+00:02:35,780 --> 00:02:37,820
+This does not go through hibernate.
+
+36
+00:02:37,850 --> 00:02:40,220
+So we have to manually put the data in here.
+
+37
+00:02:40,610 --> 00:02:44,340
+Last updated the and it.
+
+38
+00:02:44,460 --> 00:02:48,160
+Let's put it down so that it's much more clearer.
+
+39
+00:02:48,960 --> 00:02:55,320
+And we did date last updated date read use and date last updated date.
+
+40
+00:02:55,410 --> 00:02:56,220
+That's good.
+
+41
+00:02:56,220 --> 00:02:58,210
+Now let's put the values in as well.
+
+42
+00:02:58,350 --> 00:03:00,730
+The values I would use this a state function.
+
+43
+00:03:00,730 --> 00:03:08,820
+So date for and it would populate the things as this team or whatever this estate was at that point
+
+44
+00:03:08,820 --> 00:03:10,700
+of execution of the query.
+
+45
+00:03:11,040 --> 00:03:11,810
+So that's good.
+
+46
+00:03:11,820 --> 00:03:19,350
+So the day that the insertion is now called right now what we want to do is if you look at the play
+
+47
+00:03:19,350 --> 00:03:23,190
+with the manager at this is call that startup of the application.
+
+48
+00:03:23,190 --> 00:03:23,770
+Right.
+
+49
+00:03:23,850 --> 00:03:26,910
+In our obligation what are we doing.
+
+50
+00:03:27,010 --> 00:03:28,790
+We are calling to play with them to the manager.
+
+51
+00:03:28,790 --> 00:03:32,710
+So all here let's create a course that we are already creating a court.
+
+52
+00:03:33,020 --> 00:03:40,550
+So what I'll do is I'll also get an existing cause and we abate something on it.
+
+53
+00:03:40,550 --> 00:03:48,730
+So what I do is I'll quote to instead of creating a new quote I'll get it from the database.
+
+54
+00:03:48,730 --> 00:03:52,250
+So we have fine by id met Ted in here.
+
+55
+00:03:52,260 --> 00:03:55,720
+So let's do that fine by ID.
+
+56
+00:03:55,970 --> 00:04:06,800
+And let's say cut and run and called Stu doc said he would want to set the name to ablated 2001 A thousand
+
+57
+00:04:06,800 --> 00:04:08,290
+one what's the code name.
+
+58
+00:04:08,330 --> 00:04:10,080
+It's DPN 50 steps.
+
+59
+00:04:10,270 --> 00:04:12,190
+Let's didn't name to that.
+
+60
+00:04:12,370 --> 00:04:16,370
+And now that stop and started the application and see what would happen.
+
+61
+00:04:16,370 --> 00:04:20,960
+All three of them anti-love is a couple of things I'd be different and the time stamp creation time
+
+62
+00:04:20,960 --> 00:04:21,900
+stamp.
+
+63
+00:04:21,920 --> 00:04:27,120
+And then we updated the data or that sequence with the new data for the state of New columns.
+
+64
+00:04:27,140 --> 00:04:32,320
+We put it as the default and then we went in on my application.
+
+65
+00:04:32,360 --> 00:04:34,450
+We were calling to play with them to the manager.
+
+66
+00:04:34,670 --> 00:04:38,970
+And over here we are seeing that be a new code.
+
+67
+00:04:39,350 --> 00:04:44,450
+So it's an homage to steps and also taking one of the existing courses deeply into the steps and we
+
+68
+00:04:44,450 --> 00:04:48,090
+are updating that description offered.
+
+69
+00:04:48,150 --> 00:04:49,010
+That's good.
+
+70
+00:04:49,230 --> 00:04:53,000
+Let's go to the database and see what's happening there.
+
+71
+00:04:53,970 --> 00:04:59,670
+This is the org which is created through the right this is the one web site within hundred seventy three
+
+72
+00:04:59,670 --> 00:05:00,640
+are into that thing.
+
+73
+00:05:00,840 --> 00:05:04,310
+So this is having a created date and the last update.
+
+74
+00:05:04,440 --> 00:05:05,890
+That's cool.
+
+75
+00:05:06,150 --> 00:05:09,230
+Not his own the creator did and last updated it.
+
+76
+00:05:09,360 --> 00:05:13,450
+And this is 10000 one thing which we updated.
+
+77
+00:05:13,540 --> 00:05:21,630
+So which we cord in the end the manager said the need to J-P in 50 steps updated.
+
+78
+00:05:21,910 --> 00:05:27,550
+So for this one you can see that the updated date is different from the created.
+
+79
+00:05:27,630 --> 00:05:33,810
+So for all the rest of the stuff that doesn't do that doesn't free the I did it and created it out are
+
+80
+00:05:34,050 --> 00:05:34,590
+the same.
+
+81
+00:05:34,590 --> 00:05:37,660
+So you can see that even including the millisecond they are same.
+
+82
+00:05:37,680 --> 00:05:44,820
+However for the other one because when we updated the row what happened the update the time stamp gets
+
+83
+00:05:44,910 --> 00:05:46,900
+updated this gets updated.
+
+84
+00:05:47,100 --> 00:05:49,500
+And this is different from the created times them.
+
+85
+00:05:49,590 --> 00:05:52,930
+You can also see the queries which are fired in.
+
+86
+00:05:53,130 --> 00:05:58,410
+So when we look at the queries which are fired in you'd see that when I'm sending the insert into cores
+
+87
+00:05:58,830 --> 00:06:03,110
+What is it doing it's sending created a lot of data date.
+
+88
+00:06:03,120 --> 00:06:10,010
+So he had to create a date and the last updated date for the website is in 100 steps close.
+
+89
+00:06:10,200 --> 00:06:17,100
+And when the Course is being updated it's created did the last update date and the name you can see
+
+90
+00:06:17,280 --> 00:06:22,050
+that the created date is being sent from whatever was there in the database.
+
+91
+00:06:22,050 --> 00:06:27,120
+The old value was picked up from the database and sent discreate it did.
+
+92
+00:06:27,150 --> 00:06:29,150
+But the new timestep.
+
+93
+00:06:29,400 --> 00:06:38,970
+So you can see that this is getting filed 15 20 20 182 right at the new one 15 21:30 180 is being sent
+
+94
+00:06:38,970 --> 00:06:43,440
+as updated timestep the old value of the row is being sent for.
+
+95
+00:06:43,470 --> 00:06:52,260
+Created what we look at is how to ensure that you create a date and the last updated date are automatically
+
+96
+00:06:52,260 --> 00:06:57,420
+populated for all the rows in your database.
+
+97
+00:06:57,420 --> 00:07:03,250
+This is done by using a couple of hibernate and additions at Abay time stamp and at.
+
+98
+00:07:04,190 --> 00:07:05,360
+Until the next step play.
+

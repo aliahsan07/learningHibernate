@@ -1,0 +1,308 @@
+1
+00:00:03,230 --> 00:00:06,850
+Will come back if this is the first time you're writing unit tests.
+
+2
+00:00:06,980 --> 00:00:13,850
+I think that we are doing in here with course repository test might be seemingly fairly complex to you.
+
+3
+00:00:13,990 --> 00:00:18,240
+You might not be able to clearly understand what we are doing in here.
+
+4
+00:00:18,250 --> 00:00:23,190
+It might be really making you feel uncomfortable and that's fine.
+
+5
+00:00:23,200 --> 00:00:30,750
+Actually the most important thing is NEED TO seen is a very very important skill as we move on unit
+
+6
+00:00:30,760 --> 00:00:37,030
+testing would become a key differentiator between a bad programmer and a good programmer.
+
+7
+00:00:37,360 --> 00:00:42,290
+And that's why we make extensive use of unit testing in our courses.
+
+8
+00:00:42,520 --> 00:00:46,540
+It's not a problem if you're feeling uncomfortable with unit testing right now.
+
+9
+00:00:46,750 --> 00:00:52,690
+What I would show to you is that by the end of this course you'd be really familiar with human testing
+
+10
+00:00:52,990 --> 00:00:59,400
+how to do this and what are the different complexities that are associated with rating units.
+
+11
+00:00:59,470 --> 00:01:02,730
+So just hang in there and play around with the test.
+
+12
+00:01:02,830 --> 00:01:08,020
+If the unit does seem a little complex for you at this point don't worry what are we are writing in
+
+13
+00:01:08,020 --> 00:01:08,880
+the unit test.
+
+14
+00:01:09,070 --> 00:01:14,650
+You can alter it right into the application so you can go here in the demo application try doing the
+
+15
+00:01:14,650 --> 00:01:19,460
+same thing in here and see the change to reflect in the hatch to control.
+
+16
+00:01:19,460 --> 00:01:23,950
+So when you run the application you would see that that specific change would be appearing in your head
+
+17
+00:01:23,980 --> 00:01:29,920
+to control when you run the query select start from code in the hitch to control what would happen.
+
+18
+00:01:30,010 --> 00:01:36,600
+The change that you are making would appear so try and use that to try and get familiar so you can brand
+
+19
+00:01:36,670 --> 00:01:37,700
+play around.
+
+20
+00:01:37,720 --> 00:01:42,220
+Jinyan been trying to play around with the data better understand what's happening.
+
+21
+00:01:42,520 --> 00:01:48,220
+And in the meanwhile or the period of course you'd get familiar with the unit testing and the whole
+
+22
+00:01:48,220 --> 00:01:49,090
+thing.
+
+23
+00:01:49,090 --> 00:01:54,460
+The thing which I really believe in is the fact that if you are uncomfortable at something good hundred
+
+24
+00:01:54,460 --> 00:01:58,470
+times and then you really become comfortable with it.
+
+25
+00:01:58,510 --> 00:02:04,600
+OK let's end demotivation stuff in here and get back to what we are doing what we would want to do is
+
+26
+00:02:04,600 --> 00:02:07,910
+we would want to write a unit test for this method right.
+
+27
+00:02:07,930 --> 00:02:09,890
+So in a previous step we wrote the same method.
+
+28
+00:02:10,090 --> 00:02:14,250
+So the same method is going to change the data so it would know the context.
+
+29
+00:02:14,350 --> 00:02:20,800
+So I'll use the same thing as earlier so delayed by I didn't know I would want to do save what we would
+
+30
+00:02:20,800 --> 00:02:28,200
+want to do is called depositary Dotsie the details of the was the way we created the Save method is
+
+31
+00:02:28,290 --> 00:02:35,580
+that it is going to be able to handle both insert and the update so the ID is null then it will try
+
+32
+00:02:35,580 --> 00:02:36,290
+to insert.
+
+33
+00:02:36,310 --> 00:02:38,270
+Else it tries to avoid it.
+
+34
+00:02:38,520 --> 00:02:43,110
+So in the unit test what we'll do is we'll try and test the blade scenario.
+
+35
+00:02:43,260 --> 00:02:47,450
+So what I'll do I'll get a quote and update the details of it.
+
+36
+00:02:48,600 --> 00:02:52,080
+And check out.
+
+37
+00:02:52,100 --> 00:02:58,630
+So let's first get because so I use this cause it's all fine by the ten thousand one I have a cause
+
+38
+00:02:58,640 --> 00:03:00,180
+details first.
+
+39
+00:03:00,220 --> 00:03:03,500
+I can check what is the name of the cause right the name of the code.
+
+40
+00:03:03,550 --> 00:03:07,180
+At this point it should be JP In these steps.
+
+41
+00:03:07,180 --> 00:03:08,540
+That's cool.
+
+42
+00:03:08,560 --> 00:03:14,790
+So we got a course that's done now I would want to update the details of the course.
+
+43
+00:03:14,830 --> 00:03:21,270
+So how do I update the details of the code course dark set nime.
+
+44
+00:03:21,850 --> 00:03:25,190
+Let's say Tippee in 50 steps.
+
+45
+00:03:25,260 --> 00:03:37,610
+Did and I would want to call the depositary that see of course before I am able to take de-value I would
+
+46
+00:03:37,610 --> 00:03:39,510
+want to be able to update that too.
+
+47
+00:03:39,740 --> 00:03:43,420
+Now that the update is done now I would want to check the name of the court.
+
+48
+00:03:43,430 --> 00:03:53,150
+I would want to do a word get name again and check people so they could start and get it again from
+
+49
+00:03:53,330 --> 00:04:01,500
+the database so of course one Altaic one that name it should be J-P in steps.
+
+50
+00:04:02,660 --> 00:04:06,260
+They did what we're doing here is very simple right.
+
+51
+00:04:06,260 --> 00:04:12,500
+We are getting decors checking the details up because we are updating the details and we are doing a
+
+52
+00:04:12,510 --> 00:04:18,700
+Save and we are checking whether that standing fine to our left is very simple right.
+
+53
+00:04:18,930 --> 00:04:27,710
+And as the unit test that test is failing because actually I left last statement in here to remove that
+
+54
+00:04:27,710 --> 00:04:28,680
+statement.
+
+55
+00:04:28,730 --> 00:04:31,530
+So the test should actually look like this.
+
+56
+00:04:31,530 --> 00:04:37,880
+So of course save the change the details save the code and check the values fine.
+
+57
+00:04:38,420 --> 00:04:39,120
+Right.
+
+58
+00:04:39,770 --> 00:04:41,890
+Run as you notice.
+
+59
+00:04:41,990 --> 00:04:43,820
+You'll see that the test is succeeding.
+
+60
+00:04:43,820 --> 00:04:44,720
+That's cool.
+
+61
+00:04:44,720 --> 00:04:45,350
+That's very good.
+
+62
+00:04:45,350 --> 00:04:46,610
+Always good to see you.
+
+63
+00:04:46,640 --> 00:04:50,460
+But let's see what is happening in the test what is happening in the test.
+
+64
+00:04:50,470 --> 00:04:52,790
+Is first de-select queries getting fired.
+
+65
+00:04:52,790 --> 00:04:56,710
+So where is getting fire to retrieve the details.
+
+66
+00:04:56,960 --> 00:05:02,330
+And you can see that the idea which is going in instant a one right after that we are checking the detail.
+
+67
+00:05:02,340 --> 00:05:04,240
+So you're saying DPN 50 steps.
+
+68
+00:05:04,250 --> 00:05:05,680
+Abby did that.
+
+69
+00:05:05,750 --> 00:05:06,790
+Cool.
+
+70
+00:05:07,010 --> 00:05:12,320
+Now we are fighting an update query to be able to update the details of the cause.
+
+71
+00:05:12,530 --> 00:05:19,050
+And then what happens is a select query gets fired again because we are trying to get the details of
+
+72
+00:05:19,050 --> 00:05:25,290
+the call again from the database base and we are actually extracting didn't you value from the database.
+
+73
+00:05:25,380 --> 00:05:27,160
+So that's pretty good.
+
+74
+00:05:27,170 --> 00:05:33,990
+Be able to see that that succeeding in the step what we did is we wrote a test for the U.S. from it
+
+75
+00:05:33,990 --> 00:05:36,500
+that we don't test for the update scenario.
+
+76
+00:05:36,500 --> 00:05:42,610
+So we do because from the database the abated the value of the name of the course.
+
+77
+00:05:42,740 --> 00:05:47,730
+And we checked with that being the property until the next day.
+

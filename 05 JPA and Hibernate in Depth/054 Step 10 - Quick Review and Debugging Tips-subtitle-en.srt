@@ -1,0 +1,344 @@
+1
+00:00:03,050 --> 00:00:08,700
+Welcome back this step let's quickly review all that we have done in the last few steps.
+
+2
+00:00:08,810 --> 00:00:17,510
+We started creating a simple implication using spring in laser and then we created an entity called
+
+3
+00:00:17,870 --> 00:00:26,360
+CTS and then we created a code repository to be able to insert a bit delete and do operations do the
+
+4
+00:00:26,360 --> 00:00:31,080
+typical KRAD operations on the court because repository helps us to do that.
+
+5
+00:00:31,370 --> 00:00:38,300
+And we created a simple unit test cause reports that retest and the cause depositary two-Test uniters
+
+6
+00:00:38,380 --> 00:00:41,710
+the different method which are present in the court repository.
+
+7
+00:00:41,930 --> 00:00:48,550
+So if I look at the court the important things that are present are declaring a primary he called a
+
+8
+00:00:48,590 --> 00:00:53,560
+primary key will uniquely identify each row in a table.
+
+9
+00:00:53,870 --> 00:00:58,730
+So if I said ten thousand one there will be only one row in that table with ten thousand one.
+
+10
+00:00:58,730 --> 00:01:02,810
+If I said ten thousand twenty five they'll only be one at a maximum.
+
+11
+00:01:02,930 --> 00:01:09,560
+There will be only one row with that primary key and we find a column called name.
+
+12
+00:01:09,770 --> 00:01:16,340
+So this court's table has two columns ID in name and we created a few All-Met that would be created
+
+13
+00:01:16,340 --> 00:01:17,230
+getters and setters.
+
+14
+00:01:17,240 --> 00:01:19,110
+We created a constructor.
+
+15
+00:01:19,160 --> 00:01:21,110
+This is something JP needs.
+
+16
+00:01:21,110 --> 00:01:26,750
+So those are the things that we established in our entity entity is a court.
+
+17
+00:01:26,750 --> 00:01:34,580
+So typically if we start the entity this causes like any Jawa bean How do you make the beans special.
+
+18
+00:01:34,580 --> 00:01:41,000
+How do you make to be an entity by adding an entity an entity is a bean plus plus.
+
+19
+00:01:41,020 --> 00:01:47,590
+So a being that is told to the database which gets the values from the database that your entity.
+
+20
+00:01:47,750 --> 00:01:50,680
+This actually maps to row in your table.
+
+21
+00:01:50,690 --> 00:01:54,920
+So an entity been mapped to row in the table.
+
+22
+00:01:54,920 --> 00:01:58,650
+So there's a row in the table which is responding to these bean.
+
+23
+00:01:58,760 --> 00:02:00,950
+That is what is an entity.
+
+24
+00:02:01,130 --> 00:02:08,030
+And then we went to the cause repository we use entity manager find method to be able to find a specific
+
+25
+00:02:08,130 --> 00:02:08,820
+ID.
+
+26
+00:02:08,900 --> 00:02:14,760
+So I'm able to find a specific row of our course by using its primary key.
+
+27
+00:02:15,260 --> 00:02:20,260
+And then we were able to write a method to delete by ID as well.
+
+28
+00:02:20,280 --> 00:02:27,620
+So we use the ID to delete a row and we wrote a method to be able to save the details by saved we mean
+
+29
+00:02:27,620 --> 00:02:31,330
+both insert and update in the IDs null.
+
+30
+00:02:31,470 --> 00:02:33,760
+Are trying to answer it in other ways.
+
+31
+00:02:33,830 --> 00:02:34,590
+We are able.
+
+32
+00:02:34,610 --> 00:02:37,090
+We are trying to see the details.
+
+33
+00:02:37,100 --> 00:02:44,320
+We are trying blabby the rule and in the course reports retest widowed corresponding you'll notice that
+
+34
+00:02:44,430 --> 00:02:49,880
+the details of ten thousand one and saw that the name of the cause is expected.
+
+35
+00:02:49,950 --> 00:02:58,990
+We deleted 10000 two and saw that the value when we are leaving find by it and doesn't do is null.
+
+36
+00:02:59,210 --> 00:03:05,120
+So the rule is deleted one of the things is we don't want uniters to change data.
+
+37
+00:03:05,120 --> 00:03:10,320
+We do are at the end of the unit test we would want to actually reset the system back to the same data
+
+38
+00:03:10,760 --> 00:03:16,850
+and that we achieve by using a dirties contacts so that ensures that any other test makes you that it
+
+39
+00:03:16,890 --> 00:03:19,760
+doesn't do the role it's still there in the database.
+
+40
+00:03:19,760 --> 00:03:25,020
+So this unit test would run it would check all the things that we do want to check.
+
+41
+00:03:25,220 --> 00:03:33,090
+And after that the data gets reset again that's done by using the Doherty's context annotation.
+
+42
+00:03:33,140 --> 00:03:37,250
+And we wrote a simple save unit test as well.
+
+43
+00:03:37,280 --> 00:03:43,010
+We took the code we are Bladud the name of the code and we saw that when we retrieve because again we
+
+44
+00:03:43,010 --> 00:03:50,200
+get the updated details back and this what we did until now is indeed the application.
+
+45
+00:03:50,290 --> 00:03:52,910
+We use something called the command line.
+
+46
+00:03:53,110 --> 00:03:57,510
+So what would happen is whenever the application gets launched we know what these contacts get to launch
+
+47
+00:03:57,700 --> 00:04:01,190
+whatever is in the method gets executed.
+
+48
+00:04:01,210 --> 00:04:08,400
+So in here as if no we are actually creating a very simple new course if you would want to play around.
+
+49
+00:04:08,410 --> 00:04:10,570
+This is the place you can try and play around too.
+
+50
+00:04:10,570 --> 00:04:16,570
+You can call any repository that's in here and go to the hash to control and see if they are reflecting
+
+51
+00:04:16,660 --> 00:04:17,580
+or not.
+
+52
+00:04:17,740 --> 00:04:23,170
+When you launch up the hash to control and look at the data for the court you'd be able to see all the
+
+53
+00:04:23,170 --> 00:04:27,200
+details that we have changed as by of offer one.
+
+54
+00:04:27,370 --> 00:04:31,120
+One more thing I would recommend you to do to get for that understanding of what's happening behind
+
+55
+00:04:31,120 --> 00:04:33,030
+the screen is to use the debug mode.
+
+56
+00:04:33,340 --> 00:04:38,830
+So if I'm running the demo application let's kill this and putting the button point in here.
+
+57
+00:04:38,940 --> 00:04:44,800
+Double clicked on here and you'd be able to enter to the point and I can come here and now I can tell
+
+58
+00:04:44,810 --> 00:04:53,290
+right click debug as a job application or that we had to do was come to my application at a debug point
+
+59
+00:04:53,290 --> 00:04:58,930
+in here and then actually it's called a break point or at a break point in here by double clicking in
+
+60
+00:04:58,930 --> 00:05:03,010
+there and I click debug as job application.
+
+61
+00:05:03,000 --> 00:05:09,210
+Typically we use it on us in this situation we are using a debug as now launches it up in debug perspective.
+
+62
+00:05:09,210 --> 00:05:17,220
+So now I can say yes and you see that we are inside the debug perspective in say D-CT minute.
+
+63
+00:05:17,740 --> 00:05:25,630
+If I go to the database now go to histo control know and refresh the page kind of again.
+
+64
+00:05:26,710 --> 00:05:33,780
+And go to the court and you'll see that the new code is not yet inserted.
+
+65
+00:05:33,790 --> 00:05:37,830
+You can see that the new code is going to be inserted a little later.
+
+66
+00:05:37,840 --> 00:05:40,750
+Now a piece of code for now what we're trying to do is retrieve the details.
+
+67
+00:05:40,750 --> 00:05:43,630
+Put those in one way you can is good.
+
+68
+00:05:43,630 --> 00:05:46,160
+This is by using your function keys.
+
+69
+00:05:46,160 --> 00:05:49,760
+Or you can use the keys which are present in here.
+
+70
+00:05:50,070 --> 00:05:52,350
+So I would want to step over FCX.
+
+71
+00:05:52,420 --> 00:05:54,560
+So not the details of the course I retrieve.
+
+72
+00:05:54,610 --> 00:05:56,160
+You can see what's happening in the log.
+
+73
+00:05:56,320 --> 00:06:05,010
+I do a step over again you would see that the details of the course up in did had become so again.
+
+74
+00:06:05,300 --> 00:06:08,710
+And now I would like to add this statement again.
+
+75
+00:06:11,840 --> 00:06:18,950
+You see now that the ROI is getting inserted into it I gets called you can see what I will use that
+
+76
+00:06:18,950 --> 00:06:19,320
+I get.
+
+77
+00:06:19,380 --> 00:06:27,190
+But as you can see these statistics which are getting fired and I can go here run and I can now see
+
+78
+00:06:27,820 --> 00:06:36,860
+that it's having neuropathies and because that's inserted in and also go ahead and go do a F-8 function.
+
+79
+00:06:36,860 --> 00:06:41,230
+Afraid that would complete the execution.
+
+80
+00:06:41,260 --> 00:06:46,130
+Now I can actually go and see all the data which would just present in here.
+
+81
+00:06:46,460 --> 00:06:49,890
+It would all the data that is present at the launch.
+
+82
+00:06:50,170 --> 00:06:54,670
+So this is one of the other things you can do to be able to understand the whole thing.
+
+83
+00:06:54,670 --> 00:06:56,330
+For that this is called debugging.
+
+84
+00:06:56,500 --> 00:07:01,840
+We're actually putting a debug point in the application in debug mode and checking everything is working
+
+85
+00:07:01,870 --> 00:07:09,100
+fine in the step we wanted to give you a quick overview of what we have done until now as well as show
+
+86
+00:07:09,100 --> 00:07:13,380
+you a few tips about debugging and then the next step book.
+

@@ -1,0 +1,272 @@
+1
+00:00:04,120 --> 00:00:10,170
+Let's create a project which would serve as the starting point for all at once stupid stuff we would
+
+2
+00:00:10,170 --> 00:00:16,830
+want to create a main project with our I'm using sping good to go door to door and.
+
+3
+00:00:17,310 --> 00:00:23,980
+It's fine to use any question which is about that group ID and crookedest coming 28 minutes to be hyper
+
+4
+00:00:23,990 --> 00:00:26,580
+knit and the artifact name.
+
+5
+00:00:26,580 --> 00:00:28,240
+I'm just giving it us all.
+
+6
+00:00:28,440 --> 00:00:30,300
+So it's Group ID coming.
+
+7
+00:00:30,300 --> 00:00:33,000
+When did I hibernate the artifact name.
+
+8
+00:00:33,000 --> 00:00:34,380
+I'm giving it us more.
+
+9
+00:00:34,500 --> 00:00:37,140
+That's basically the name of the application that we're creating.
+
+10
+00:00:37,260 --> 00:00:42,610
+What I've already done is I've chosen in three dependencies who rob JP hitched to.
+
+11
+00:00:42,690 --> 00:00:47,380
+So these are the three dependences that you would need once you choose this dependencies.
+
+12
+00:00:47,400 --> 00:00:53,710
+We are all set to get rocking and rolling and click and it will download a zip code.
+
+13
+00:00:53,790 --> 00:00:57,000
+We have done this multiple times earlier so it should be ready for you.
+
+14
+00:00:57,000 --> 00:00:59,970
+You can import this into your eclipse.
+
+15
+00:00:59,970 --> 00:01:01,160
+How do you do that.
+
+16
+00:01:01,170 --> 00:01:04,830
+I have extracted the zip and placed it on some folder on my hard disk.
+
+17
+00:01:04,830 --> 00:01:13,370
+What I need to do is do a file import existing Maimon projects choose the next and choose the directory
+
+18
+00:01:13,370 --> 00:01:20,720
+where you expect that this file to have extracted it in 20 minutes get and hibernate with spring boot
+
+19
+00:01:20,900 --> 00:01:24,120
+0 2 GPA it grants that to follow where extracted the it do.
+
+20
+00:01:24,290 --> 00:01:26,350
+And I am importing it right now.
+
+21
+00:01:26,590 --> 00:01:28,450
+I'm clicking the finish.
+
+22
+00:01:28,550 --> 00:01:33,780
+This would import the project so it could bring Mavin into picture and make an orderly departure that
+
+23
+00:01:33,790 --> 00:01:39,070
+example and it would import everything that is needed to execute this project.
+
+24
+00:01:39,080 --> 00:01:43,490
+If this is the first time you are using that to pursue question of spring boot this might really take
+
+25
+00:01:43,550 --> 00:01:49,010
+a little while because this would download all the dependencies onto your local mayor with repository
+
+26
+00:01:49,370 --> 00:01:54,760
+and use them to create your project once the project is created.
+
+27
+00:01:54,800 --> 00:01:57,510
+It would look something like this you have two main Jowa.
+
+28
+00:01:57,590 --> 00:02:03,710
+This is where we would put all call in all up production code so spend resources this way we would put
+
+29
+00:02:03,710 --> 00:02:05,340
+all the configuration.
+
+30
+00:02:05,380 --> 00:02:08,460
+The application properties which is already present in there.
+
+31
+00:02:08,470 --> 00:02:12,860
+If let's say I would want to quote something about spring I would want to go to the something about
+
+32
+00:02:12,860 --> 00:02:16,830
+hibernate or that compilation can be done in application to properties.
+
+33
+00:02:16,850 --> 00:02:22,040
+We also have source Jowers as Java is the place where all this code would go.
+
+34
+00:02:22,040 --> 00:02:26,510
+We would write a lot of uniters during this code and all the tests that we would be writing would be
+
+35
+00:02:26,510 --> 00:02:28,180
+present in all this.
+
+36
+00:02:28,180 --> 00:02:34,350
+Show all the test code that we would write over here will not be really part of the deployable.
+
+37
+00:02:34,430 --> 00:02:36,190
+What do you mean by deployable.
+
+38
+00:02:36,260 --> 00:02:43,940
+When our code goes to production we would create a job or over all that this code will not be part of
+
+39
+00:02:44,000 --> 00:02:44,730
+that job.
+
+40
+00:02:44,730 --> 00:02:49,160
+Our work dress code is to ensure that all the code is working fine.
+
+41
+00:02:49,160 --> 00:02:53,790
+It does not really need it to run your application in production.
+
+42
+00:02:53,930 --> 00:02:57,750
+Other than that you would see maybe in dependencies which are present in here.
+
+43
+00:02:57,890 --> 00:03:03,710
+You have a wide variety of Mavin dependencies which are coming in because we chose three dependencies
+
+44
+00:03:03,740 --> 00:03:04,250
+in here.
+
+45
+00:03:04,290 --> 00:03:07,770
+Right rituals G-B G.P.A. do and Rabbe.
+
+46
+00:03:07,880 --> 00:03:14,050
+So if I open a pondered XML you'd see that there are those dependencies to be started in AJP.
+
+47
+00:03:14,130 --> 00:03:17,970
+So I wrote web and teched these had three things we treat you with.
+
+48
+00:03:17,990 --> 00:03:20,250
+And these are the three things which are present in here.
+
+49
+00:03:20,450 --> 00:03:26,000
+In addition always spring would add in a test dependency.
+
+50
+00:03:26,060 --> 00:03:27,950
+So the spring initialiser by default.
+
+51
+00:03:27,950 --> 00:03:31,810
+Add to that dependency on the standard test.
+
+52
+00:03:31,850 --> 00:03:37,520
+This is the one which we'll be using to write are you need yes to make sure that you have your application
+
+53
+00:03:37,520 --> 00:03:38,790
+running what you can do.
+
+54
+00:03:38,870 --> 00:03:43,770
+They might piggishness do it right click on it and see it run s g on it.
+
+55
+00:03:43,780 --> 00:03:45,710
+Just so this would launch up a test.
+
+56
+00:03:45,710 --> 00:03:51,230
+This test would launch up something called Spring boot context and this would check whether everything
+
+57
+00:03:51,240 --> 00:03:53,140
+is just fine or not.
+
+58
+00:03:53,150 --> 00:03:56,270
+If the first time you're locking it up it will take a little while.
+
+59
+00:03:56,330 --> 00:04:03,180
+So let's be a little patient with it and or some time you'd see that the application will launch.
+
+60
+00:04:03,200 --> 00:04:10,240
+And if I want to see the control look into windows show view and I can bring up the control.
+
+61
+00:04:10,400 --> 00:04:11,900
+You can see the console in here.
+
+62
+00:04:12,050 --> 00:04:16,240
+With all the load that is being printed there is a lot of log which is coming in here.
+
+63
+00:04:16,310 --> 00:04:20,930
+The generated bad shows are green but the shows J and it has succeeded.
+
+64
+00:04:20,950 --> 00:04:26,270
+The other thing you can also do is to add more piggish and rightly Granice job application and see that
+
+65
+00:04:26,270 --> 00:04:28,140
+you would be able to ram that Texas film.
+
+66
+00:04:28,490 --> 00:04:34,040
+What I recommend you to do is play around so try and see what's in here try and spend some time looking
+
+67
+00:04:34,040 --> 00:04:39,590
+at the folder structure and see what is in the palm read SML and other things like that and I will see
+
+68
+00:04:39,590 --> 00:04:40,870
+you in the next step.
+

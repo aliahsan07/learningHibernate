@@ -1,0 +1,412 @@
+1
+00:00:03,660 --> 00:00:09,000
+Welcome back in one of the previous steps we looked at J.P. Cuil we looked at how to write Kuwaiti's
+
+2
+00:00:09,030 --> 00:00:10,390
+using J.P. Cuil.
+
+3
+00:00:10,500 --> 00:00:14,850
+And we can add them to name queries in the last.
+
+4
+00:00:15,060 --> 00:00:20,790
+Let's shift our attention to something called native Kuwaiti's.
+
+5
+00:00:20,850 --> 00:00:28,070
+Some of the times you have to use native queries to find queries to the database builder those situations
+
+6
+00:00:28,320 --> 00:00:36,130
+and also how you can fire and Integrity's so I copied the typical test and I'll call this native test.
+
+7
+00:00:37,780 --> 00:00:40,170
+Native Crace.
+
+8
+00:00:41,030 --> 00:00:46,470
+So native great is nothing but sending a direct Cuil out from you AJP.
+
+9
+00:00:46,490 --> 00:00:52,490
+So instead of typical where we talk about entities when we're talking about JP Kuehl we are writing
+
+10
+00:00:52,490 --> 00:01:00,440
+queries using entities so the kind of queries that we would be using typically would be looking like
+
+11
+00:01:00,680 --> 00:01:02,880
+selects the from courtsey.
+
+12
+00:01:02,900 --> 00:01:10,870
+However this same query exude as a need to query it would look something like select start from course.
+
+13
+00:01:10,880 --> 00:01:15,920
+Right so what we want to do now is we will want to be able to execute a query of this kind.
+
+14
+00:01:15,920 --> 00:01:17,490
+So let's start from code.
+
+15
+00:01:17,720 --> 00:01:19,150
+How do we do that.
+
+16
+00:01:19,190 --> 00:01:25,180
+For that we will need to use the nitty gritty is what all the other stuff you just present in here.
+
+17
+00:01:25,190 --> 00:01:27,130
+So all this is not really needed.
+
+18
+00:01:27,140 --> 00:01:31,690
+So JP Cuil basic Actually now it's no longer need.
+
+19
+00:01:31,920 --> 00:01:34,550
+Pretty basic.
+
+20
+00:01:35,120 --> 00:01:36,880
+Basically what we're doing in here.
+
+21
+00:01:36,920 --> 00:01:42,310
+So here the manager has create native query method.
+
+22
+00:01:42,470 --> 00:01:48,970
+So I can create a native query passing in the query that I would want to execute to the query which
+
+23
+00:01:48,970 --> 00:01:53,610
+I want to use is that ex-staff from Cox 2.
+
+24
+00:01:54,070 --> 00:02:01,300
+So here I would change this as well to select stuff from and Right-Click.
+
+25
+00:02:01,400 --> 00:02:09,530
+I don't want to use unit test you can see that Janet has succeeded.
+
+26
+00:02:09,560 --> 00:02:13,970
+And also you can see that to start from course it's being fired here.
+
+27
+00:02:14,360 --> 00:02:15,380
+So that's cool.
+
+28
+00:02:15,380 --> 00:02:18,430
+And let's see what the results are being printed in here.
+
+29
+00:02:18,770 --> 00:02:25,640
+Well here you can see that all the quotes are being properly however one of the things that you can
+
+30
+00:02:25,640 --> 00:02:32,070
+see is here that blank that object is being printed because it does not know which entity to map.
+
+31
+00:02:32,090 --> 00:02:39,860
+It is said you can tell the entity to map to by using the entity as the second parameter so I can say
+
+32
+00:02:39,860 --> 00:02:46,740
+code got glass and I'm saying that the results would be of the type called door glass.
+
+33
+00:02:47,090 --> 00:02:55,340
+So now if you x you'd be created you'd see that the TAKES IT Fein as well as I look at the logs.
+
+34
+00:02:55,430 --> 00:02:58,220
+This is about is the output that is being printed.
+
+35
+00:02:58,400 --> 00:02:58,980
+That's good.
+
+36
+00:02:59,100 --> 00:03:01,040
+So this is a very basic need to quit.
+
+37
+00:03:01,040 --> 00:03:01,370
+Right.
+
+38
+00:03:01,370 --> 00:03:09,300
+So there are at once needed queries that you can fire as well so you can create native query and I can
+
+39
+00:03:09,300 --> 00:03:15,400
+define bad divs as well so I can see where ID is equal to.
+
+40
+00:03:15,420 --> 00:03:23,330
+Question Mark and I can take QED that said paramita and I can see the position.
+
+41
+00:03:23,580 --> 00:03:31,440
+So the position here starts with one so I can say position one de-value I would want to set a thousand
+
+42
+00:03:31,470 --> 00:03:36,540
+one and I can get the results set and printed this.
+
+43
+00:03:36,920 --> 00:03:40,730
+So I need to create is that bad.
+
+44
+00:03:40,800 --> 00:03:43,840
+So I'm trying to get a specific code in here.
+
+45
+00:03:44,540 --> 00:03:45,740
+Or the output.
+
+46
+00:03:45,740 --> 00:03:49,850
+So this is the IDs question.
+
+47
+00:03:50,500 --> 00:03:53,100
+I'm getting a specific code.
+
+48
+00:03:53,660 --> 00:03:58,550
+You can see that there is only one code that is being printed that's taking 50 steps.
+
+49
+00:03:58,700 --> 00:04:02,890
+That's the one which has the ID of 10000 1.
+
+50
+00:04:02,900 --> 00:04:05,490
+That's the cause that's being printed in here.
+
+51
+00:04:05,810 --> 00:04:09,350
+Now I can also used named Bammy.
+
+52
+00:04:09,380 --> 00:04:13,700
+So it's sort of being something of this going but I content named parameters.
+
+53
+00:04:13,700 --> 00:04:15,380
+What is the name paramita.
+
+54
+00:04:15,650 --> 00:04:17,710
+So interesting question mark.
+
+55
+00:04:17,880 --> 00:04:24,060
+So using position I can use named benami So I'm seeing colon ID and giving it a name.
+
+56
+00:04:24,230 --> 00:04:29,310
+And here I can say said parameter ID as 10000.
+
+57
+00:04:29,450 --> 00:04:36,980
+So instead of using additional parameters 1 I'm using named paramita so Id ideas ten thousand one.
+
+58
+00:04:36,980 --> 00:04:42,170
+Now you see there's not really any change in the result because it's the exact clearly which we are
+
+59
+00:04:42,170 --> 00:04:42,920
+fighting in.
+
+60
+00:04:42,920 --> 00:04:45,040
+Except with a different approach.
+
+61
+00:04:45,150 --> 00:04:47,660
+So here ideas equal to call.
+
+62
+00:04:47,700 --> 00:04:53,900
+And in this step what we're doing is actually looking at a few things related to native queries.
+
+63
+00:04:53,930 --> 00:04:58,940
+These are actually all the scenarios where we are looking at right now are actually those things where
+
+64
+00:04:59,180 --> 00:05:01,320
+it's better to use the J-P Cuil.
+
+65
+00:05:01,520 --> 00:05:04,680
+But are there situations where you have to go for native queries.
+
+66
+00:05:04,790 --> 00:05:11,450
+Yes there are definitely situations where you have to go to do queries Sometimes you have to set some
+
+67
+00:05:11,450 --> 00:05:15,980
+tuning parameters or you want to use some database specific feature.
+
+68
+00:05:15,980 --> 00:05:21,200
+So if you're going to do a database and it has a feature which is not supported by Dhupia in those kind
+
+69
+00:05:21,200 --> 00:05:25,740
+of situations you have no other option other than trying to find any queries.
+
+70
+00:05:26,030 --> 00:05:32,130
+And the other situation where you'd have to go for a need to query is when you have to do a mass update.
+
+71
+00:05:32,150 --> 00:05:38,130
+Let's say I would want to abate all the rules ina specific table in a query.
+
+72
+00:05:38,330 --> 00:05:43,030
+In those kind of situations if you do it through AJP then you would need to get the dough.
+
+73
+00:05:43,070 --> 00:05:49,010
+And then about it get zero then I bet you cannot do a Masab day using JP.
+
+74
+00:05:49,100 --> 00:05:54,320
+So in those kind of situations we would use Nathu queries so the way we would do that let's say I would
+
+75
+00:05:54,320 --> 00:06:01,550
+want to update the ablated time stamp on all this stuff do queries to date.
+
+76
+00:06:01,700 --> 00:06:09,090
+So I would want to update all the rules in the course table so I would want to say update called said
+
+77
+00:06:09,960 --> 00:06:16,720
+I would want to say the updated date last updated date of all the columns.
+
+78
+00:06:16,720 --> 00:06:22,810
+Let's say I would want to set it persisted menu using an update then the baby would do that is by using
+
+79
+00:06:22,810 --> 00:06:24,110
+a query.
+
+80
+00:06:24,880 --> 00:06:26,770
+Execute it.
+
+81
+00:06:26,950 --> 00:06:28,990
+And this would be done in your back.
+
+82
+00:06:28,990 --> 00:06:35,850
+This would be done in a number of rows updated rules.
+
+83
+00:06:36,680 --> 00:06:44,240
+And now I can log in a number of rules update I can log the number of close update to see what would
+
+84
+00:06:44,240 --> 00:06:44,660
+happen.
+
+85
+00:06:44,770 --> 00:06:46,240
+So doing this kind of stuff.
+
+86
+00:06:46,310 --> 00:06:52,460
+JP is not really efficient because if you want to update this kind of stuff through JPA you need to
+
+87
+00:06:52,460 --> 00:06:56,300
+get the each row and then update go viral.
+
+88
+00:06:56,480 --> 00:06:59,450
+There's no way to do Masab that through.
+
+89
+00:06:59,750 --> 00:07:04,950
+You can see that I'm getting a transaction required here because we are trying to change the data.
+
+90
+00:07:04,970 --> 00:07:06,400
+You need a transaction.
+
+91
+00:07:06,590 --> 00:07:10,600
+And for this does that make it transactional transaction.
+
+92
+00:07:10,880 --> 00:07:15,970
+Ideally an underlying all of this which we're making changes to the database we were calling a repository
+
+93
+00:07:15,980 --> 00:07:19,160
+method and the transactional is defined on the repository method.
+
+94
+00:07:19,160 --> 00:07:25,380
+So there was no problem just the first time at our Click calling update from the chain itself.
+
+95
+00:07:25,430 --> 00:07:30,230
+So we needed that transaction to make sure that this is within the boundaries of a transaction.
+
+96
+00:07:30,260 --> 00:07:36,680
+And you can see that I'm seeing update got last updated that is equal to this date and you can see that
+
+97
+00:07:37,010 --> 00:07:42,210
+all of the four rows which are present in the database are updated to this step.
+
+98
+00:07:42,210 --> 00:07:45,080
+What we looked at is different kinds of native queries.
+
+99
+00:07:45,080 --> 00:07:48,580
+We can look at how to set parameters to native queries.
+
+100
+00:07:48,590 --> 00:07:54,920
+Also we looked at how big you can be using a need to create more of the things you'd need to make sure
+
+101
+00:07:54,920 --> 00:08:00,080
+that when I were using a query you're not making use of persistence context.
+
+102
+00:08:00,320 --> 00:08:06,950
+So if you have all these entities data present in your persistence context then you need to make sure
+
+103
+00:08:06,950 --> 00:08:12,320
+that you would refresh them so that you get the latest stuff from the database and then the next step.
+

@@ -1,0 +1,112 @@
+1
+00:00:02,970 --> 00:00:09,070
+Welcome back in this step we'll try and replace all that we have learned about and manage it.
+
+2
+00:00:09,100 --> 00:00:12,130
+India-A manager is a symbol in the face.
+
+3
+00:00:12,180 --> 00:00:18,510
+It's an interface to something called persistent gone text.
+
+4
+00:00:18,510 --> 00:00:24,840
+So persistence context is a very important concept as far as GPA is concerned.
+
+5
+00:00:24,840 --> 00:00:28,370
+Here we are playing with a lot of entities.
+
+6
+00:00:28,480 --> 00:00:30,920
+One is an entity cause to an entity.
+
+7
+00:00:31,230 --> 00:00:34,890
+And there might be other entities we are playing with in a single transaction.
+
+8
+00:00:35,100 --> 00:00:43,640
+All the entities that are being saved through the entity manager are thieved to something called persistence
+
+9
+00:00:43,900 --> 00:00:44,370
+gone.
+
+10
+00:00:44,490 --> 00:00:51,000
+It's the persistence context keeps track of all the different entities which are changed during this
+
+11
+00:00:51,630 --> 00:00:52,700
+transaction.
+
+12
+00:00:52,830 --> 00:00:58,300
+And also it keeps track of all the changes that needs to be stored back to the database.
+
+13
+00:00:58,350 --> 00:01:03,130
+And we saw that in the manager of course a lot of different methods right.
+
+14
+00:01:03,300 --> 00:01:08,160
+It offers a lot of fine methods to be able to execute queries against the database and retrieve data
+
+15
+00:01:08,220 --> 00:01:09,010
+back.
+
+16
+00:01:09,030 --> 00:01:12,230
+It offers both this method so that I can save.
+
+17
+00:01:12,240 --> 00:01:17,880
+I can create an entity in the database and the manager MoJ method help me to save the changes that I
+
+18
+00:01:17,880 --> 00:01:25,140
+have done because down to the database we can delete an entity by using the Remove method.
+
+19
+00:01:25,200 --> 00:01:31,500
+We also Lubet the flush method which helps to persist all the changes until enough down to the database
+
+20
+00:01:31,590 --> 00:01:33,720
+in the middle of a transaction as well.
+
+21
+00:01:33,900 --> 00:01:39,390
+And also we look that refreshed method which helps us to override the changes and refresh the content
+
+22
+00:01:39,390 --> 00:01:40,680
+from the database.
+
+23
+00:01:40,680 --> 00:01:48,370
+We also have the detachment that we would detach the entity from the persistence context what happened
+
+24
+00:01:48,390 --> 00:01:51,190
+with the detachment that is that particular entity.
+
+25
+00:01:51,270 --> 00:01:55,030
+Changes to it are no longer tracked by the entity manager.
+
+26
+00:01:55,260 --> 00:01:58,250
+The manager is a very important thing for you to understand.
+
+27
+00:01:58,260 --> 00:02:03,120
+So I would recommend you to play around with the entity manager and also try and the different stuff
+
+28
+00:02:03,120 --> 00:02:08,140
+which is present inside the interface and the manager until the next step.
+

@@ -1,0 +1,296 @@
+1
+00:00:03,320 --> 00:00:05,080
+We'll come back in the previous step.
+
+2
+00:00:05,090 --> 00:00:11,640
+We saw that in the manager within a transaction keeps track of all the things that Adam managed it.
+
+3
+00:00:11,780 --> 00:00:18,020
+So when you call into the manager or entity manager or merge you are in agreement on a specific object
+
+4
+00:00:18,200 --> 00:00:19,500
+when a specific entity.
+
+5
+00:00:19,550 --> 00:00:25,100
+What are the changes that are done to that entity in the rest of the transaction are all sort of tracked
+
+6
+00:00:25,100 --> 00:00:28,820
+by the entity manage it and the state to the database.
+
+7
+00:00:28,970 --> 00:00:30,950
+Let's look at another example.
+
+8
+00:00:30,950 --> 00:00:33,320
+So courses there to create a quartz one.
+
+9
+00:00:33,360 --> 00:00:40,200
+This is of course one called two and the two in in the quarter to quarter one and let's create a new
+
+10
+00:00:40,200 --> 00:00:44,470
+one called two and that this code through.
+
+11
+00:00:44,550 --> 00:00:47,700
+And of course 2.70 that's cool.
+
+12
+00:00:47,790 --> 00:00:52,660
+Right now this code is but this did by the manager.
+
+13
+00:00:52,890 --> 00:00:55,390
+And this one is octopus's had been into the manager.
+
+14
+00:00:55,500 --> 00:00:56,750
+Let's give it a different name.
+
+15
+00:00:56,790 --> 00:00:57,890
+So it's no longer there.
+
+16
+00:00:57,890 --> 00:01:07,920
+So Weezer's Let's call this angle Jesus and Oh here we are actually setting and logis in 100 steps.
+
+17
+00:01:07,930 --> 00:01:12,460
+Updated you know what would happen when this gets started again.
+
+18
+00:01:12,490 --> 00:01:16,790
+It's the courts when details get saved and the courts do the deal.
+
+19
+00:01:16,790 --> 00:01:19,260
+Also get to the well.
+
+20
+00:01:19,280 --> 00:01:22,260
+So is this an hundred steps and allergies in a hundred steps.
+
+21
+00:01:22,260 --> 00:01:23,810
+So that's what you would see.
+
+22
+00:01:23,810 --> 00:01:29,270
+You can start BBDO here and run the application and see what would happen if you manage it also has
+
+23
+00:01:29,360 --> 00:01:36,440
+a method called flush into the manager to flush what entity manager that flush does it.
+
+24
+00:01:36,500 --> 00:01:42,020
+The changes which are done until then they would be sent out to the database so I can call into the
+
+25
+00:01:42,020 --> 00:01:50,700
+manager at plush and multiple places so that the changes up to that point are sent out of the database.
+
+26
+00:01:50,720 --> 00:01:55,140
+So now you can see this basic transaction as four steps right.
+
+27
+00:01:55,190 --> 00:01:58,210
+So the first step is creating the code.
+
+28
+00:01:58,400 --> 00:02:03,160
+Then we get a bidding because one actually to be accurate in quarter one and abrading quotes.
+
+29
+00:02:03,320 --> 00:02:11,490
+And we are creating calls and upgrading calls to let's say I don't want the calls to change just to
+
+30
+00:02:11,490 --> 00:02:13,130
+be going to the database.
+
+31
+00:02:13,140 --> 00:02:19,200
+So after this stage I don't want all the calls to data details to go to the database at all.
+
+32
+00:02:19,200 --> 00:02:20,760
+How can I do that.
+
+33
+00:02:20,820 --> 00:02:22,740
+There's another method in the manager.
+
+34
+00:02:22,740 --> 00:02:29,740
+So let's say in city manager Darren Deedat cost.
+
+35
+00:02:29,970 --> 00:02:36,720
+So what would happen after this is the changes to course to are no longer tracked by the entity manager.
+
+36
+00:02:36,720 --> 00:02:42,060
+So what you would see that goes to that set name will not be executed if they kill the application and
+
+37
+00:02:42,060 --> 00:02:44,440
+start again and go to the H-2 control.
+
+38
+00:02:44,630 --> 00:02:51,930
+You see that the because to name remains that Anglo is in handed steps Kitchener's started up you would
+
+39
+00:02:51,930 --> 00:02:58,980
+see that the debate which is done did the courts do which was Ankiel just in a hundred steps are not
+
+40
+00:02:58,980 --> 00:03:06,240
+being saved because after the document that is called on us Pacificare entity that entity is no longer
+
+41
+00:03:06,240 --> 00:03:08,480
+tracked by the entity manager.
+
+42
+00:03:08,800 --> 00:03:14,610
+Let's say I am creating the courses first let's say I move this stuff also or don't support someone
+
+43
+00:03:14,780 --> 00:03:16,720
+not to name the objects.
+
+44
+00:03:16,780 --> 00:03:20,220
+The courses I'm actually moving them a little down.
+
+45
+00:03:20,530 --> 00:03:25,420
+I also remove the flash in here so that we kind of treat this as two steps right.
+
+46
+00:03:25,460 --> 00:03:28,330
+The first step is creation of all the cards that flush it.
+
+47
+00:03:28,350 --> 00:03:32,930
+So they are sent to the database and then I'm detaching only chords to for now.
+
+48
+00:03:32,930 --> 00:03:36,500
+So what would happen if you ran it only close to his detection.
+
+49
+00:03:36,540 --> 00:03:41,050
+So one name would be said to webservices in hundred steps.
+
+50
+00:03:41,110 --> 00:03:46,680
+Updated Howard-Costello name will not be updated because ghost 2 is not tracked by the entity manager
+
+51
+00:03:46,770 --> 00:03:47,670
+anymore.
+
+52
+00:03:47,850 --> 00:03:51,610
+If I wanted to do that one then I can do this as well.
+
+53
+00:03:51,660 --> 00:03:53,520
+So the manager don't detach.
+
+54
+00:03:53,580 --> 00:04:00,450
+Of course one could find that if you ran this application and see the stock until you would see that
+
+55
+00:04:00,450 --> 00:04:02,790
+the date would be as it is here.
+
+56
+00:04:02,880 --> 00:04:06,750
+So it would be web services a hundred steps and ledges in hundred steps.
+
+57
+00:04:06,810 --> 00:04:13,620
+These updates will not be saved to the database because those entities are not backed by the entity
+
+58
+00:04:13,630 --> 00:04:15,760
+manager at all.
+
+59
+00:04:15,900 --> 00:04:22,680
+The other way of not tracking entities is by clearing everything out to ensure of calling Dadge on everything.
+
+60
+00:04:22,680 --> 00:04:25,410
+You can also say the manager not clear.
+
+61
+00:04:25,770 --> 00:04:31,410
+So this would clear everything that is there in the entity manager so it would clear out everything
+
+62
+00:04:31,410 --> 00:04:37,130
+that is being practised by the manager and everything including quotes when calls to will not be tracked
+
+63
+00:04:37,140 --> 00:04:41,860
+and whatever changes you make to them will not be flushed out will not be saved to the database.
+
+64
+00:04:41,880 --> 00:04:45,900
+Let's kill the application started again.
+
+65
+00:04:45,900 --> 00:04:49,160
+You'll see that the data in the database.
+
+66
+00:04:49,470 --> 00:04:56,350
+These two values the update will not be saved to it is refresh.
+
+67
+00:04:56,360 --> 00:05:00,840
+Can you please on.
+
+68
+00:05:01,320 --> 00:05:03,240
+So you can see the first two rows in here.
+
+69
+00:05:03,270 --> 00:05:09,970
+So within hundred trips and ledges in hundred steps the updates are not saved to the database.
+
+70
+00:05:10,050 --> 00:05:17,090
+So in this step we look at how you can have the manager not track a few entities.
+
+71
+00:05:17,110 --> 00:05:19,320
+So by default the manager tracks everything.
+
+72
+00:05:19,320 --> 00:05:24,610
+If you want to track a few entities you can tap into the demand or detach.
+
+73
+00:05:24,720 --> 00:05:28,320
+If you want to clear everything out you can call into the manager directly.
+
+74
+00:05:28,790 --> 00:05:29,960
+And then the next step for.
+
