@@ -221,3 +221,4 @@ For this reason, persistent collections must be declared as an interface type.
 
 
 ---------------------------------------------------------------------------------------------------
+	

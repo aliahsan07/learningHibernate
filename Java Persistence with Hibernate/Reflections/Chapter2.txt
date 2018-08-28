@@ -169,3 +169,4 @@ The types declared and used in the mapping files are neither Java data types nor
 which are converters which translate between Java and SQL data types. 
 Hibernate attempts to determine the correct conversion and mapping type autonomously if the type attribute is not specified in the mapping, 
 by using Java reflection to determine the Java type of the declared property and using a default mapping type for that Java type.
+
