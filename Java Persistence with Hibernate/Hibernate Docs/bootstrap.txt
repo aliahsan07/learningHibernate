@@ -1,0 +1,25 @@
+The term bootstrapping refers to initializing and starting a software component. In Hibernate, we are specifically talking about the process of building a fully functional SessionFactory instance or EntityManagerFactory instance, for JPA. The process is very different for each.
+
+Native Bootstrapping
+The first step in native bootstrapping is the building of a ServiceRegistry holding the services Hibernate will need during bootstrapping and at run time.
+
+There are two different ServiceRegisteries
+
+1- BootstrapServiceRegistry -> is intended to hold services that Hibernate needs at both bootstrap and run time. This boils down to 3 services
+1) org.hibernate.boot.registry.classloading.spi.ClassLoaderService -> which controls how Hibernate interacts with `ClassLoader`s
+2) org.hibernate.integrator.spi.IntegratorService -> which controls the management and discovery of org.hibernate.integrator.spi.Integrator instances.
+3) org.hibernate.boot.registry.selector.spi.StrategySelector -> which control how Hibernate resolves implementations of various strategy contracts. 
+
+2- StandardServiceRegistry
+You will almost always need to configure the StandardServiceRegistry, which is done through org.hibernate.boot.registry.StandardServiceRegistryBuilder
+
+So there are apparently multiple ways to setup standardserviceregistry. 
+One is using MetadataBuilder which is discussed first up in the docs.
+
+Then there is JPA-compliant bootstrapping
+In JPA, we are ultimately interested in bootstrapping a javax.persistence.EntityManagerFactory
+META-INF/persistence.xml configuration files are requried
+
+Although annotations are much more common, there are projects where XML mappings are preferred. You can even mix annotations and XML mappings so that you can override annotation mappings with XML configurations that can be easily changed without recompiling the project source code. This is possible because if there are two conflicting mappings, the XML mappings take precedence over its annotation counterpart.
+
+Legacy BootStrapping made use of Configuration. The method used by Journaldev tutorials. 
