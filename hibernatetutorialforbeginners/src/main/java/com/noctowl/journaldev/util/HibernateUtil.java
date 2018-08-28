@@ -65,6 +65,8 @@ public class HibernateUtil {
     private static SessionFactory buildSessionJavaConfigFactory() {
         try {
             Configuration configuration = new Configuration();
+            //  For property based configuration, we could have a property file and read it in the class,
+            // but for simplicity I am creating Properties instance in the class itself.
 
             //Create Properties, can be read from property files too
             Properties props = new Properties();
@@ -80,6 +82,8 @@ public class HibernateUtil {
             //addClass(Employee1.class) will look for resource
             // com/journaldev/hibernate/model/Employee1.hbm.xml (not good)
             configuration.addAnnotatedClass(Employee1.class);
+
+
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             System.out.println("Hibernate Java Config serviceRegistry created");
