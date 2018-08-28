@@ -23,3 +23,19 @@ META-INF/persistence.xml configuration files are requried
 Although annotations are much more common, there are projects where XML mappings are preferred. You can even mix annotations and XML mappings so that you can override annotation mappings with XML configurations that can be easily changed without recompiling the project source code. This is possible because if there are two conflicting mappings, the XML mappings take precedence over its annotation counterpart.
 
 Legacy BootStrapping made use of Configuration. The method used by Journaldev tutorials. 
+
+Hibernate’s native bootstrapping API is very flexible which makes it more complicated to use but also more powerful than the JPA bootstrapping API. 
+
+Native Bootstrapping process:
+- create a StandardServiceRegistry
+- build a Metadata object
+- instantiate a SessionFactory
+
+Hibernate uses two service registries:
+1) BootstrapServiceRegistry
+2) StandardServiceRegistry
+
+Need to configure the StandardServiceRegistry. Using hibernate.cfg.xml.
+It makes the implementation easy and allows you to change the configuration without changing the source code. 
+After you instantiated a configured ServiceRegistry, you need to create a Metadatarepresentation of your domain model.
+You can do that based on the configuration files hbm.xml and orm.xml or annotated entity classes. 
