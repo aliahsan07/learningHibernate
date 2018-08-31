@@ -1,0 +1,16 @@
+Hibernate uses the JDBC API for persistence. 
+In the world of Java, there are two well-defined mechanisms for dealing with transactions in JDBC: JDBC itself and JTA.
+Hibernate supports both mechanisms for integrating with transactions and allowing applications to manage physical transactions.
+Which one to use is defined by hibernate.transaction.coordinator_class setting
+- jdbc: Manages transactions via calls to java.sql.Connection
+- jta: Manages transactions via JTA
+If a JPA application does not provide a setting for hibernate.transaction.coordinator_class, Hibernate will automatically build the proper transaction coordinator based on the transaction type for the persistence unit.
+If a non-JPA application does not provide a setting for hibernate.transaction.coordinator_class, Hibernate will use jdbc as the default. This default will cause problems if the application actually uses JTA-based transactions.
+
+Hibernate uses JDBC connections and JTA resources directly, without adding any additional locking behavior. Hibernate does not lock objects in memory.
+The behavior defined by the isolation level of your database transactions does not change when you use Hibernate. The Hibernate Session acts as a transaction-scoped cache providing repeatable reads for lookup by identifier and queries that result in loading entities.
+
+Hibernate Transaction API
+Hibernate provides an API for helping to isolate applications from the differences in the underlying physical transaction system in use.
+Based on the configured TransactionCoordinatorBuilder, Hibernate will simply do the right thing when this transaction API is used by the application. This allows your applications and components to be more portable move around into different environments.
+To use this API, you would obtain the org.hibernate.Transaction from the Session. Transaction allows for all the normal operations you’d expect: begin, commit and rollback

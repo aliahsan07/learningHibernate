@@ -15,3 +15,4 @@ MANUAL
 The Session flushing is delegated to the application, which must call Session.flush() explicitly in order to apply the persistence context changes.
 
 If you bootstrap Hibernate natively, and not through JPA, by default, the Session API will trigger a flush automatically when executing a native query.
+
