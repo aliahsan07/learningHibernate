@@ -1,0 +1,17 @@
+Flushing is the process of synchronizing the state of the persistence context with the underlying database. 
+The EntityManager and the Hibernate Session expose a set of methods, through which the application developer can change the persistent state of an entity.
+The persistence context acts as a transactional write-behind cache, queuing any entity state change.
+Like any write-behind cache, changes are first applied in-memory and synchronized with the database during the flush time.
+The flush operation takes every entity state change and translates it to an INSERT, UPDATE or DELETE statement.
+JPA defines only two flushing strategies: AUTO and COMMIT
+Hibernate has a much broader spectrum:
+ALWAYS
+Flushes the Session before every query.
+AUTO
+This is the default mode, and it flushes the Session only if necessary.
+COMMIT
+The Session tries to delay the flush until the current Transaction is committed, although it might flush prematurely too.
+MANUAL
+The Session flushing is delegated to the application, which must call Session.flush() explicitly in order to apply the persistence context changes.
+
+If you bootstrap Hibernate natively, and not through JPA, by default, the Session API will trigger a flush automatically when executing a native query.
