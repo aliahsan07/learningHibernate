@@ -1,0 +1,17 @@
+In a relational database, locking refers to actions taken to prevent data from changing between the time it is read and the time is used.
+Your locking strategy can be either optimistic or pessimistic.
+Optimistic:
+Optimistic locking assumes that multiple transactions can complete without affecting each other, and that therefore transactions can proceed without locking the data resources that they affect. Before committing, each transaction verifies that no other transaction has modified its data. If the check reveals conflicting modifications, the committing transaction rolls back.
+Pessimistic
+Pessimistic locking assumes that concurrent transactions will conflict with each other, and requires resources to be locked after they are read and only unlocked after the application has finished using the data.
+
+More on optimistic:
+When your application uses long transactions or conversations that span several database transactions, you can store versioning data so that if the same entity is updated by two conversations, the last to commit changes is informed of the conflict, and does not override the other conversation’s work. This approach guarantees some isolation, but scales well and works particularly well in read-often-write-sometimes situations.
+Hibernate either versions by keeping a dedicated version number or a timestamp. 
+
+The version number mechanism for optimistic locking is provided through a @Version annotation.
+@Version
+private long version;
+Here, the version property is mapped to the version column, and the entity manager uses it to detect conflicting updates, and prevent the loss of updates that would otherwise be overwritten by a last-commit-wins strategy.
+
+Goal: to use mentioned versioning in my personal project.

@@ -1,0 +1,4 @@
+com\journaldev\hibernate\util\HibernateUtil.class
+com\journaldev\hibernate\main\HQLExamples.class
+com\journaldev\hibernate\model\Address.class
+com\journaldev\hibernate\model\Employee.class

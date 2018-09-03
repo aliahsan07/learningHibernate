@@ -1,0 +1,26 @@
+Fetching is the process of grabbing data from the database and making it available to the application. 
+Fetching too much data, adds unnecessary overhead in terms of both JDBC communication and ResultSet processing. 
+
+Scopes for defining fetching:
+static
+- SELECT (EAGER or LAZY, termed as N+1)
+- JOIN 
+- BATCH (based on WHERE clause)
+- SUBSELECT 
+
+dynamic
+- fetch profiles
+- HPL/JPQL 
+
+Secondaty select can lead to n+1 problem.
+
+
+The Hibernate recommendation is to statically mark all associations lazy and to use dynamic fetching strategies for eagerness. This is unfortunately at odds with the JPA specification which defines that all one-to-one and many-to-one associations should be eagerly fetched by default. Hibernate, as a JPA provider, honors that default.
+
+------------------------
+By default, JPA @ManyToOne and @OneToOne annotations are fetched EAGERly, while @OneToMany and @ManyToMany are considered LAZY. 
+Default is using JPA mappings.
+
+Having most of the associations defined as LAZY requires us to use the “join fetch” JPQL operator and retrieve only the associations we need to fulfill a given request.
+
+If I forget to "join fetch" properly, the Persistence Context will run queries on your behalf while you navigate the lazy associations, and that might cause N+1 problems. 
